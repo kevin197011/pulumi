@@ -1,0 +1,39 @@
+{
+    "kind": "update",
+    "startTime": 1749140950,
+    "message": "Initial commit",
+    "environment": {
+        "exec.kind": "cli",
+        "git.author": "kk",
+        "git.author.email": "61411931+kevin197011@users.noreply.github.com",
+        "git.committer": "GitHub",
+        "git.committer.email": "noreply@github.com",
+        "git.dirty": "true",
+        "git.head": "98c073ee4b106d7a35bbbdab4ba9653c10606809",
+        "git.headName": "refs/heads/main",
+        "pulumi.arch": "amd64",
+        "pulumi.env.PULUMI_BACKEND_URL": "set",
+        "pulumi.env.PULUMI_CONFIG_PASSPHRASE": "set",
+        "pulumi.flag.yes": "true",
+        "pulumi.os": "darwin",
+        "pulumi.version": "v3.174.0",
+        "stack.environments": "[]",
+        "updatePlan": "false",
+        "vcs.kind": "github.com",
+        "vcs.owner": "kevin197011",
+        "vcs.repo": "pulumi",
+        "vcs.root": "quickstart"
+    },
+    "config": {
+        "pulumi:tags": {
+            "pulumi:template": "kubernetes-python"
+        }
+    },
+    "version": 0,
+    "result": "failed",
+    "endTime": 1749140955,
+    "resourceChanges": {
+        "create": 1,
+        "same": 3
+    }
+}

@@ -1,0 +1,493 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/quickstart/dev",
+        "latest": {
+            "manifest": {
+                "time": "2025-06-06T00:15:22.134224+08:00",
+                "magic": "aca397c5c01e73e6cdf70d6d6782bbc85035e91382bf09bf47b318e145d08d2e",
+                "version": "v3.174.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:0R3yQeR+DN4=:v1:unEKEir4Sxe9nxZx:qQtrROZTEwgBq69oPbOaSmy63o3AYA=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "name": "nginx-b641084a"
+                    },
+                    "created": "2025-06-05T16:14:51.357641Z",
+                    "modified": "2025-06-05T16:14:51.357641Z",
+                    "sourcePosition": "project:///.venv/lib/python3.13/site-packages/pulumi/runtime/stack.py#140"
+                },
+                {
+                    "urn": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0",
+                    "custom": true,
+                    "id": "dfb52746-8222-4af0-9c82-eaca6e50e8f1",
+                    "type": "pulumi:providers:kubernetes",
+                    "inputs": {
+                        "__internal": {},
+                        "version": "4.23.0"
+                    },
+                    "outputs": {
+                        "version": "4.23.0"
+                    },
+                    "created": "2025-06-05T16:14:51.481985Z",
+                    "modified": "2025-06-05T16:14:51.481985Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::nginx",
+                    "custom": true,
+                    "id": "nginx",
+                    "type": "kubernetes:core/v1:Namespace",
+                    "inputs": {
+                        "apiVersion": "v1",
+                        "kind": "Namespace",
+                        "metadata": {
+                            "name": "nginx"
+                        }
+                    },
+                    "outputs": {
+                        "__fieldManager": "pulumi-kubernetes-3e32752a",
+                        "__initialApiVersion": "v1",
+                        "__inputs": {
+                            "apiVersion": "v1",
+                            "kind": "Namespace",
+                            "metadata": {
+                                "name": "nginx"
+                            }
+                        },
+                        "apiVersion": "v1",
+                        "kind": "Namespace",
+                        "metadata": {
+                            "creationTimestamp": "2025-06-05T16:14:51Z",
+                            "labels": {
+                                "kubernetes.io/metadata.name": "nginx"
+                            },
+                            "name": "nginx",
+                            "resourceVersion": "739",
+                            "uid": "0bdaf697-26a3-4877-96be-d2e73ad63e34"
+                        },
+                        "spec": {
+                            "finalizers": [
+                                "kubernetes"
+                            ]
+                        },
+                        "status": {
+                            "phase": "Active"
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::dfb52746-8222-4af0-9c82-eaca6e50e8f1",
+                    "propertyDependencies": {
+                        "apiVersion": [],
+                        "kind": [],
+                        "metadata": []
+                    },
+                    "additionalSecretOutputs": [
+                        "metadata.name"
+                    ],
+                    "created": "2025-06-05T16:14:51.562695Z",
+                    "modified": "2025-06-05T16:14:51.562695Z",
+                    "sourcePosition": "project:///__main__.py#10"
+                },
+                {
+                    "urn": "urn:pulumi:dev::quickstart::kubernetes:apps/v1:Deployment::nginx",
+                    "custom": true,
+                    "id": "nginx/nginx-b641084a",
+                    "type": "kubernetes:apps/v1:Deployment",
+                    "inputs": {
+                        "apiVersion": "apps/v1",
+                        "kind": "Deployment",
+                        "metadata": {
+                            "annotations": {
+                                "pulumi.com/autonamed": "true"
+                            },
+                            "name": "nginx-b641084a",
+                            "namespace": "nginx"
+                        },
+                        "spec": {
+                            "replicas": 1,
+                            "selector": {
+                                "matchLabels": {
+                                    "app": "nginx"
+                                }
+                            },
+                            "template": {
+                                "metadata": {
+                                    "labels": {
+                                        "app": "nginx"
+                                    }
+                                },
+                                "spec": {
+                                    "containers": [
+                                        {
+                                            "image": "nginx:latest",
+                                            "livenessProbe": {
+                                                "httpGet": {
+                                                    "path": "/",
+                                                    "port": 80
+                                                },
+                                                "initialDelaySeconds": 30,
+                                                "timeoutSeconds": 5
+                                            },
+                                            "name": "nginx",
+                                            "ports": [
+                                                {
+                                                    "containerPort": 80
+                                                }
+                                            ],
+                                            "readinessProbe": {
+                                                "httpGet": {
+                                                    "path": "/",
+                                                    "port": 80
+                                                },
+                                                "initialDelaySeconds": 5,
+                                                "timeoutSeconds": 5
+                                            },
+                                            "resources": {
+                                                "limits": {
+                                                    "cpu": "200m",
+                                                    "memory": "256Mi"
+                                                },
+                                                "requests": {
+                                                    "cpu": "100m",
+                                                    "memory": "128Mi"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "restartPolicy": "Always"
+                                }
+                            }
+                        }
+                    },
+                    "outputs": {
+                        "__fieldManager": "pulumi-kubernetes-4a51b931",
+                        "__initialApiVersion": "apps/v1",
+                        "__inputs": {
+                            "apiVersion": "apps/v1",
+                            "kind": "Deployment",
+                            "metadata": {
+                                "annotations": {
+                                    "pulumi.com/autonamed": "true"
+                                },
+                                "name": "nginx-b641084a",
+                                "namespace": "nginx"
+                            },
+                            "spec": {
+                                "replicas": 1,
+                                "selector": {
+                                    "matchLabels": {
+                                        "app": "nginx"
+                                    }
+                                },
+                                "template": {
+                                    "metadata": {
+                                        "labels": {
+                                            "app": "nginx"
+                                        }
+                                    },
+                                    "spec": {
+                                        "containers": [
+                                            {
+                                                "image": "nginx:latest",
+                                                "livenessProbe": {
+                                                    "httpGet": {
+                                                        "path": "/",
+                                                        "port": 80
+                                                    },
+                                                    "initialDelaySeconds": 30,
+                                                    "timeoutSeconds": 5
+                                                },
+                                                "name": "nginx",
+                                                "ports": [
+                                                    {
+                                                        "containerPort": 80
+                                                    }
+                                                ],
+                                                "readinessProbe": {
+                                                    "httpGet": {
+                                                        "path": "/",
+                                                        "port": 80
+                                                    },
+                                                    "initialDelaySeconds": 5,
+                                                    "timeoutSeconds": 5
+                                                },
+                                                "resources": {
+                                                    "limits": {
+                                                        "cpu": "200m",
+                                                        "memory": "256Mi"
+                                                    },
+                                                    "requests": {
+                                                        "cpu": "100m",
+                                                        "memory": "128Mi"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "restartPolicy": "Always"
+                                    }
+                                }
+                            }
+                        },
+                        "apiVersion": "apps/v1",
+                        "kind": "Deployment",
+                        "metadata": {
+                            "annotations": {
+                                "deployment.kubernetes.io/revision": "1",
+                                "pulumi.com/autonamed": "true"
+                            },
+                            "creationTimestamp": "2025-06-05T16:14:51Z",
+                            "generation": 1,
+                            "managedFields": [
+                                {
+                                    "apiVersion": "apps/v1",
+                                    "fieldsType": "FieldsV1",
+                                    "fieldsV1": {
+                                        "f:metadata": {
+                                            "f:annotations": {
+                                                "f:pulumi.com/autonamed": {}
+                                            }
+                                        },
+                                        "f:spec": {
+                                            "f:replicas": {},
+                                            "f:selector": {},
+                                            "f:template": {
+                                                "f:metadata": {
+                                                    "f:labels": {
+                                                        "f:app": {}
+                                                    }
+                                                },
+                                                "f:spec": {
+                                                    "f:containers": {
+                                                        "k:{\"name\":\"nginx\"}": {
+                                                            ".": {},
+                                                            "f:image": {},
+                                                            "f:livenessProbe": {
+                                                                "f:httpGet": {
+                                                                    "f:path": {},
+                                                                    "f:port": {}
+                                                                },
+                                                                "f:initialDelaySeconds": {},
+                                                                "f:timeoutSeconds": {}
+                                                            },
+                                                            "f:name": {},
+                                                            "f:ports": {
+                                                                "k:{\"containerPort\":80,\"protocol\":\"TCP\"}": {
+                                                                    ".": {},
+                                                                    "f:containerPort": {}
+                                                                }
+                                                            },
+                                                            "f:readinessProbe": {
+                                                                "f:httpGet": {
+                                                                    "f:path": {},
+                                                                    "f:port": {}
+                                                                },
+                                                                "f:initialDelaySeconds": {},
+                                                                "f:timeoutSeconds": {}
+                                                            },
+                                                            "f:resources": {
+                                                                "f:limits": {
+                                                                    "f:cpu": {},
+                                                                    "f:memory": {}
+                                                                },
+                                                                "f:requests": {
+                                                                    "f:cpu": {},
+                                                                    "f:memory": {}
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "f:restartPolicy": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "manager": "pulumi-kubernetes-4a51b931",
+                                    "operation": "Apply",
+                                    "time": "2025-06-05T16:14:51Z"
+                                },
+                                {
+                                    "apiVersion": "apps/v1",
+                                    "fieldsType": "FieldsV1",
+                                    "fieldsV1": {
+                                        "f:metadata": {
+                                            "f:annotations": {
+                                                "f:deployment.kubernetes.io/revision": {}
+                                            }
+                                        },
+                                        "f:status": {
+                                            "f:availableReplicas": {},
+                                            "f:conditions": {
+                                                ".": {},
+                                                "k:{\"type\":\"Available\"}": {
+                                                    ".": {},
+                                                    "f:lastTransitionTime": {},
+                                                    "f:lastUpdateTime": {},
+                                                    "f:message": {},
+                                                    "f:reason": {},
+                                                    "f:status": {},
+                                                    "f:type": {}
+                                                },
+                                                "k:{\"type\":\"Progressing\"}": {
+                                                    ".": {},
+                                                    "f:lastTransitionTime": {},
+                                                    "f:lastUpdateTime": {},
+                                                    "f:message": {},
+                                                    "f:reason": {},
+                                                    "f:status": {},
+                                                    "f:type": {}
+                                                }
+                                            },
+                                            "f:observedGeneration": {},
+                                            "f:readyReplicas": {},
+                                            "f:replicas": {},
+                                            "f:updatedReplicas": {}
+                                        }
+                                    },
+                                    "manager": "k3s",
+                                    "operation": "Update",
+                                    "subresource": "status",
+                                    "time": "2025-06-05T16:15:21Z"
+                                }
+                            ],
+                            "name": "nginx-b641084a",
+                            "namespace": "nginx",
+                            "resourceVersion": "771",
+                            "uid": "b6fe6d30-6b6e-4562-819a-b9466b098a16"
+                        },
+                        "spec": {
+                            "progressDeadlineSeconds": 600,
+                            "replicas": 1,
+                            "revisionHistoryLimit": 10,
+                            "selector": {
+                                "matchLabels": {
+                                    "app": "nginx"
+                                }
+                            },
+                            "strategy": {
+                                "rollingUpdate": {
+                                    "maxSurge": "25%",
+                                    "maxUnavailable": "25%"
+                                },
+                                "type": "RollingUpdate"
+                            },
+                            "template": {
+                                "metadata": {
+                                    "labels": {
+                                        "app": "nginx"
+                                    }
+                                },
+                                "spec": {
+                                    "containers": [
+                                        {
+                                            "image": "nginx:latest",
+                                            "imagePullPolicy": "Always",
+                                            "livenessProbe": {
+                                                "failureThreshold": 3,
+                                                "httpGet": {
+                                                    "path": "/",
+                                                    "port": 80,
+                                                    "scheme": "HTTP"
+                                                },
+                                                "initialDelaySeconds": 30,
+                                                "periodSeconds": 10,
+                                                "successThreshold": 1,
+                                                "timeoutSeconds": 5
+                                            },
+                                            "name": "nginx",
+                                            "ports": [
+                                                {
+                                                    "containerPort": 80,
+                                                    "protocol": "TCP"
+                                                }
+                                            ],
+                                            "readinessProbe": {
+                                                "failureThreshold": 3,
+                                                "httpGet": {
+                                                    "path": "/",
+                                                    "port": 80,
+                                                    "scheme": "HTTP"
+                                                },
+                                                "initialDelaySeconds": 5,
+                                                "periodSeconds": 10,
+                                                "successThreshold": 1,
+                                                "timeoutSeconds": 5
+                                            },
+                                            "resources": {
+                                                "limits": {
+                                                    "cpu": "200m",
+                                                    "memory": "256Mi"
+                                                },
+                                                "requests": {
+                                                    "cpu": "100m",
+                                                    "memory": "128Mi"
+                                                }
+                                            },
+                                            "terminationMessagePath": "/dev/termination-log",
+                                            "terminationMessagePolicy": "File"
+                                        }
+                                    ],
+                                    "dnsPolicy": "ClusterFirst",
+                                    "restartPolicy": "Always",
+                                    "schedulerName": "default-scheduler",
+                                    "securityContext": {},
+                                    "terminationGracePeriodSeconds": 30
+                                }
+                            }
+                        },
+                        "status": {
+                            "availableReplicas": 1,
+                            "conditions": [
+                                {
+                                    "lastTransitionTime": "2025-06-05T16:15:21Z",
+                                    "lastUpdateTime": "2025-06-05T16:15:21Z",
+                                    "message": "Deployment has minimum availability.",
+                                    "reason": "MinimumReplicasAvailable",
+                                    "status": "True",
+                                    "type": "Available"
+                                },
+                                {
+                                    "lastTransitionTime": "2025-06-05T16:14:51Z",
+                                    "lastUpdateTime": "2025-06-05T16:15:21Z",
+                                    "message": "ReplicaSet \"nginx-b641084a-59bf4f87c7\" has successfully progressed.",
+                                    "reason": "NewReplicaSetAvailable",
+                                    "status": "True",
+                                    "type": "Progressing"
+                                }
+                            ],
+                            "observedGeneration": 1,
+                            "readyReplicas": 1,
+                            "replicas": 1,
+                            "updatedReplicas": 1
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::nginx"
+                    ],
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::dfb52746-8222-4af0-9c82-eaca6e50e8f1",
+                    "propertyDependencies": {
+                        "apiVersion": [],
+                        "kind": [],
+                        "metadata": [
+                            "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::nginx"
+                        ],
+                        "spec": []
+                    },
+                    "created": "2025-06-05T16:15:21.981604Z",
+                    "modified": "2025-06-05T16:15:21.981604Z",
+                    "sourcePosition": "project:///__main__.py#17"
+                }
+            ],
+            "metadata": {}
+        }
+    }
+}
