@@ -4,7 +4,7 @@
         "stack": "organization/quickstart/dev",
         "latest": {
             "manifest": {
-                "time": "2025-06-10T19:55:26.747536+08:00",
+                "time": "2025-06-10T19:52:51.853966+08:00",
                 "magic": "aca397c5c01e73e6cdf70d6d6782bbc85035e91382bf09bf47b318e145d08d2e",
                 "version": "v3.174.0"
             },
@@ -47,62 +47,6 @@
                     },
                     "created": "2025-06-05T16:19:20.522108Z",
                     "modified": "2025-06-05T16:19:20.522108Z"
-                },
-                {
-                    "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::nginx",
-                    "custom": true,
-                    "id": "nginx",
-                    "type": "kubernetes:core/v1:Namespace",
-                    "inputs": {
-                        "apiVersion": "v1",
-                        "kind": "Namespace",
-                        "metadata": {
-                            "name": "nginx"
-                        }
-                    },
-                    "outputs": {
-                        "__fieldManager": "pulumi-kubernetes-aa9d39ff",
-                        "__initialApiVersion": "v1",
-                        "__inputs": {
-                            "apiVersion": "v1",
-                            "kind": "Namespace",
-                            "metadata": {
-                                "name": "nginx"
-                            }
-                        },
-                        "apiVersion": "v1",
-                        "kind": "Namespace",
-                        "metadata": {
-                            "creationTimestamp": "2025-06-05T16:19:20Z",
-                            "labels": {
-                                "kubernetes.io/metadata.name": "nginx"
-                            },
-                            "name": "nginx",
-                            "resourceVersion": "873",
-                            "uid": "ad5c35d4-5443-4089-a245-74dc944af087"
-                        },
-                        "spec": {
-                            "finalizers": [
-                                "kubernetes"
-                            ]
-                        },
-                        "status": {
-                            "phase": "Active"
-                        }
-                    },
-                    "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
-                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::d7ac5ed6-010c-4f57-9521-a34209789ed4",
-                    "propertyDependencies": {
-                        "apiVersion": [],
-                        "kind": [],
-                        "metadata": []
-                    },
-                    "additionalSecretOutputs": [
-                        "metadata.name"
-                    ],
-                    "created": "2025-06-05T16:19:20.587037Z",
-                    "modified": "2025-06-05T16:19:20.587037Z",
-                    "sourcePosition": "project:///components/base_component.py#30"
                 },
                 {
                     "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::cattle-system",
@@ -214,6 +158,62 @@
                     ],
                     "created": "2025-06-05T16:33:57.211404Z",
                     "modified": "2025-06-05T16:33:57.211404Z",
+                    "sourcePosition": "project:///components/base_component.py#30"
+                },
+                {
+                    "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::nginx",
+                    "custom": true,
+                    "id": "nginx",
+                    "type": "kubernetes:core/v1:Namespace",
+                    "inputs": {
+                        "apiVersion": "v1",
+                        "kind": "Namespace",
+                        "metadata": {
+                            "name": "nginx"
+                        }
+                    },
+                    "outputs": {
+                        "__fieldManager": "pulumi-kubernetes-aa9d39ff",
+                        "__initialApiVersion": "v1",
+                        "__inputs": {
+                            "apiVersion": "v1",
+                            "kind": "Namespace",
+                            "metadata": {
+                                "name": "nginx"
+                            }
+                        },
+                        "apiVersion": "v1",
+                        "kind": "Namespace",
+                        "metadata": {
+                            "creationTimestamp": "2025-06-05T16:19:20Z",
+                            "labels": {
+                                "kubernetes.io/metadata.name": "nginx"
+                            },
+                            "name": "nginx",
+                            "resourceVersion": "873",
+                            "uid": "ad5c35d4-5443-4089-a245-74dc944af087"
+                        },
+                        "spec": {
+                            "finalizers": [
+                                "kubernetes"
+                            ]
+                        },
+                        "status": {
+                            "phase": "Active"
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::d7ac5ed6-010c-4f57-9521-a34209789ed4",
+                    "propertyDependencies": {
+                        "apiVersion": [],
+                        "kind": [],
+                        "metadata": []
+                    },
+                    "additionalSecretOutputs": [
+                        "metadata.name"
+                    ],
+                    "created": "2025-06-05T16:19:20.587037Z",
+                    "modified": "2025-06-05T16:19:20.587037Z",
                     "sourcePosition": "project:///components/base_component.py#30"
                 },
                 {
@@ -648,13 +648,13 @@
                             "installCRDs": true
                         },
                         "verify": false,
-                        "version": "v1.17.2",
+                        "version": "v1.14.4",
                         "waitForJobs": false
                     },
                     "outputs": {
                         "__inputs": {
                             "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
-                            "ciphertext": "v1:kiJr1G5OruD9S/3m:9zKmv1FROnLoPnwDi1eRr7T/iCwqa6k5SvCC23YItJBYUAMZ2Bjn/FucUmDnVF0LeDfUp985AggiKBhHvoQf0xCLyCyeS5pH7Y67TX2TuKYIQERvls8mNL0ssfcRN/lgRSEVuRo+INUM0fyZrNPM1tH74z0yQcjOBIDcx5Q5Fv9D6e/9Iuj7fFDUVd3vWYyWMW6Uqz3zjSHb5qBEHWfo7/ejMoaYPxMvGvwPUJJYDJt5wNsaB8K4YOTRDhwrF3J/w1WezftrhfP0hl1uknoEWW9GXd0k4VRDLhajD6pBSq2vp+oQcpwAdIA3B4iyUZZ9HiUaplrPHBTr78NkAmoecWwhoKx5E0lkYZcoon9EH6s+NGtgys7pmQv9+cqA5vQBAY9thxsPsImV5aiVMH9fO12bsu9yk15TywN+OYrKaltzTyGpUrhDdCSQK2Z7j3c5Ec2gm+c9akeF8w5NKayEL9hHVjx6MkyB15iE/3Tez/u7WlAE9EbRMHCkEpDCEeMZgIVWHdgEHyGty7GqoqsMJ5WRLxcX3DpJRH7h3LR944NFwKZ05FsM6YNV08zWoEYqyvImwak+Uv6KFn6QZYH3hDAWvU7H8RkaXCvOb4ca6D4XWClbJIJwx7WQHjjUmtdVr5yJonC4jqm1yebASaKJBoa4F9db+n2oiYJO+5fTVdSx6VeTkmN82sIW8okn3K3fxOhZYWfXRkka03ExEa0IXrZ/VNvPwS8vT7L+knwoH1ikymdPnNbur5GqwReaCDkEG9VTCDdfOv0uSLVA5hVrlwHB0B2AsNwuLkvMItvlmpR94amgHoJ40AOPa5yo6SSEikOEHW/va68usPy7H6IP4aTJ8+WWtkEZynss4QvTfqOp0VnnIt+Cmkri8+NWSaG7OukePlNdXcucPBBFyktPgM7ucWOgvtz2aLr3T0HIshNxzYKQrsGEw4EuW/ED+AUb3gca7A3ASJU4kH/k85abWmGb5SqlDw=="
+                            "ciphertext": "v1:dUDw6LXaVGp0Hfng:8Ltey9FqqG9QmXcA1ohLfyT6tnbZZbsGQgI24uEXvtCWq8ZUmVNLjFZDROZYPHHkTxEdFSekBdo2QaBhyaGpxLEfHHYYMqZKwx+mKyIRHMYTdQJEuLOwT4Sz3jbbJJUAWSiYiaD4qFJKQgvRQuNuh+wdOFptd71zAMYWONG5DyTvYc4S8lZWzorvl5IOwaZNcP/hUXoGOW4f34A7LdTteWxieVASU9RNnV3NkeOA+OBU/6v4BjIE/u8IyIDlBdAeApSbq+sdI24a6UvYWrjyRMwHLDgKMSwhVdQ0t+K/g+CPd5qsVh1v1OJyB3EQ7uCoer0BxFCvUF9WC40Q/oQrnPHO/SzUs3Pg5I5S/hVx6apMQ78wkR8Mj23EPPC6mJ3BCWAeoG5iUj8F9dB4ZNHuncSoIY/zSgiD+MdcUC6Aby8KtH8DM9P7d5trUrncyBtnIswi5FZAVa9YoxcFcIv0fEgachPGNS5LD5v8NDXiSrcpcYzyb2ZE43f9Io8pHJVGWUE7owCCkODge1aFWH5FOhdQl3+XtXJyqOExULyeliJOai9vYzMmuKa7CTW9C0Rz+ch7tYaGVRHaUoQxg75cyOgk67AHQ2ijNZBp0UnuDh6zPp5kaPYpci37tzks8No8L/50XKbpXm6EahD+qvVFJjrzcxR1QlLbwD7KilAirVvEGtR9/wTWNEQHaB9C2mzvavQpk/nT9iwMHpbyxO2gGGOKoZuLh6jL9GQjyS7tk6Ar394XfElAaWKyNcggmt1ihjjcwB0bouPgodb/v9YSx613V1a+co7vvLdbc0AW1ejE5Xi10e81jFTCThbhtxcB1Rmd7q7rXmHFQNmfzx6tvCOCsqq5Ovatt/MkHsSGkSYOxv1AOsKbukp0xJgBmJOMJQzd9slSRL1y8p0Bg1+2zY1pd+RVTFkvzAY6d484ssT7nk9JNlsFWKwVh8BWQ91W7fGfl0zVGUYcQjC9aAmSWXhA4P3I4A=="
                         },
                         "allowNullValues": false,
                         "atomic": false,
@@ -730,20 +730,17 @@
                                 "cert-manager-78c58e12-webhook"
                             ],
                             "Role.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
-                                "cert-manager/cert-manager-78c58e12-tokenrequest",
                                 "cert-manager/cert-manager-78c58e12-webhook:dynamic-serving",
                                 "kube-system/cert-manager-78c58e12-cainjector:leaderelection",
                                 "kube-system/cert-manager-78c58e12:leaderelection"
                             ],
                             "RoleBinding.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
-                                "cert-manager/cert-manager-78c58e12-cert-manager-78c58e12-tokenrequest",
                                 "cert-manager/cert-manager-78c58e12-webhook:dynamic-serving",
                                 "kube-system/cert-manager-78c58e12-cainjector:leaderelection",
                                 "kube-system/cert-manager-78c58e12:leaderelection"
                             ],
                             "Service/v1": [
                                 "cert-manager/cert-manager-78c58e12",
-                                "cert-manager/cert-manager-78c58e12-cainjector",
                                 "cert-manager/cert-manager-78c58e12-webhook"
                             ],
                             "ServiceAccount/v1": [
@@ -759,20 +756,20 @@
                         "skipAwait": false,
                         "skipCrds": false,
                         "status": {
-                            "appVersion": "v1.17.2",
+                            "appVersion": "v1.14.4",
                             "chart": "cert-manager",
                             "name": "cert-manager-78c58e12",
                             "namespace": "cert-manager",
-                            "revision": 2,
+                            "revision": 1,
                             "status": "deployed",
-                            "version": "v1.17.2"
+                            "version": "v1.14.4"
                         },
                         "timeout": 300,
                         "values": {
                             "installCRDs": true
                         },
                         "verify": false,
-                        "version": "v1.17.2",
+                        "version": "v1.14.4",
                         "waitForJobs": false
                     },
                     "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
@@ -792,8 +789,8 @@
                         "version": []
                     },
                     "created": "2025-06-05T16:35:01.019554Z",
-                    "modified": "2025-06-10T11:55:26.744432Z",
-                    "sourcePosition": "project:///components/cert_manager.py#30"
+                    "modified": "2025-06-05T16:35:01.019554Z",
+                    "sourcePosition": "project:///components/cert_manager.py#17"
                 },
                 {
                     "urn": "urn:pulumi:dev::quickstart::kubernetes:helm.sh/v3:Release::rancher",
@@ -853,7 +850,7 @@
                     "outputs": {
                         "__inputs": {
                             "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
-                            "ciphertext": "v1:3yrz+JwVjoIOgHO6:RSvnJ3bRTEbBKKObB9Z8tqTZRd13CsHwkKQr4FfjwY7buPismf4OK6ojG8xDrDmbJ8GerfPyDYxDylpUInOHla3jo8a1giMCI2DxJCpZo3JbqWzPRzXpk1ZJ150pM0p90Zvxn6zfkWwb0dqyUlCc6f3XWb/DJPx+yKhCYlBxgSNtxIl3y1cLNiXQ2o0HMdDxo0jFV/7kCXh7lhcPxFtC4ZgkuEEcuSUeclCdcDNy6HnIpbVqZs74zbZ0Vhfyk+6Kek4nFlmJALkeegxrJ1tSahm/tdUbFv8fnNMpkpDhEIQRv8Z8DI/FxN5pBO71DhqtDe3ECP6D+O+m27SSP9oyqJEhQmpT8ZFUfXSItDk9NPvGAJqseVtElzhmGM9ny1aCWZii6B6skUJXdEFPJe+cydH/YjdpYOAqVqxEwx6PoUoOt7kmEgWPmlWy9AzvBs0lBRqggWi1urk4VmM1HmF2jiAoL0Ehv4yvkght1KQU/2CXauOeEuO+Hd632sqycR+Vq4ug6zJOc1+H742u7KchRGy5FHe0ZmN1mjXVf1GLt8C1qnfH0bIsHlDowv7i5l5DtSHJngSPgiuqLaeMZJ7zOgdIY+xsan2BWw4+BUtImfBWOeAIUG2phcUV4KpBPLFZO+jFmTsRLVEn82J2AiptYpgVJJZpb/6CDZ/MSwKC1DZ/6fI95J4UZoHLAVG3ItHO0vIuWaJwCu6X99zl9phCgkFca7vwIjsUq+mVcT43A1AKNDcz5GrD0lQzygh9rjYgoPbLDJkm3cf0Io81+aC/ph1no3YZzqBcBnGP1K7PvuMpSZ+LC9tcRC72IRLAOjDsyoPgMDjLYwHCqdw9lE373XyDPBq+QOLg9FhUXgG16x8IkkYqzBuXOq5hw3zU0sVRUDimyb3rj0gPddsmpBqQIDzDsPZTTnsgBlQSlu7lA1wsnWkT0r2SBC9P5609RAB4gbA7kClYOw5qRTOdIvuJnauKcrg+6NmkBMfR6o0hy+DbgJZh8siiztcnjipkio60sS1ZAg1zG0GWSC7Dqyegkik3TjRnC7wWQiD+H9h++pJFxShxtkQEXrssqabe8Q9zw5qbh2L0c4nYHQ9swsG8/17Xa+bDCh/PULN3vybI5vi/VYKDennME9n4Nx1vnXLHpgR/zyew+g3VdL6qEtvC+Ei8bA=="
+                            "ciphertext": "v1:qVe3ba7VcvG55Q+J:lDiICWJddXLZoGnpBeMUJfQAqlIgSPpY5ESQFDxgfqWDScyO8XGncPctalLNGo6Qqn5Y3MFPUoLBHcl3QdsRVixKHd5MJtVtugoUMRXZ425SlkZDLE/tF4yBlAVjSEay0dUzxDFMLRFl8eK/zR7fpqbQnHx1QxZdlxiJYmOnjmOWq2EAmPDu94BLhdiSxutzp8DyO4uK+oNTIGjz5K6JeWFYOd+AMRRnzG0/VDMLSXsrLbz8OKYqZ5cT9UWI8Gr8wdqrG/Z0h+QVCmS+sUeC2uUSfyNtdWOHFk0Vl5wdAqKFXI0F33fLS+RXej1g2uy11qnWU43aVq0chIG2M4kaDOC07KWK9oTA0M+JjvanSTFBzzuCCkBwZxZ5eJhgDrK8qJa982tpJeCuRH/Xn2ldtAu+YtCY7O7RyblCD+ByDD5h4/BX0JvNVP18+LLEjT7TTVvB4yQodVCLLxVa/LLDj4xOSbzcYAa8vYmxIWMEdIrIvvLGtLqzk5vj1P9J7EcC/7i4dfONuovCuUJQJpOjo5ez/qUrGyiU0a1L6mpq0V45rrM8dM2qzQbZcd9PfxqvxNgtpk8uOywQrR+k9a7C4ms3MGzVUdUGdJ1XfaYk3JA5CQ+wuHxgIX8J0/68p+DjjsGf3spdJ4ZTYNnE39ljc199YOD+o//W4IDeXGMsOevXPzdQaiYR9KGKSm+YjFN2n1ze/oWt5MzzHzS+MiHhg4CLOBFDdPl5igAy1LzpcnSSjTJFIQr+HbzvkDNFu/xKBhJoeuq5jLPJmYiQwiFSSxag9gcPofQqBZ+9LjkJ5qFgXJILYjcYNm9VmCyrifEPvtT8yPrV2brvOb2ZTKc1A+/evF1SC9pKHtdRwUWwAaHy5BiIlPU9iOr3fZFoNA11PWpKteHDMGsN53O367gXbVBVI2CXNs4HdSIbYQLxaxzZyzCD63T3hnlIsG8yCNKUYCxEX1gup84Zpmg9G98+YU1JenqgCXU+3gUrQ/YvJVCf58bLiY7M3yRabt28pECsoDUgRMLAPeQ4qbKJQnj+2X47ZkcXJ/rXfkHa1byvqrJ5qZAIZPKdzeLZlO4fgmALhaWN4nRfeQStYjURvRnco/e8sQ06GV2Q0gI8l57gD8umNUGws7Gy0kOy/dfMUbiLS8+ANadeW4ShsaCKAKX15C/DQg=="
                         },
                         "allowNullValues": false,
                         "atomic": false,

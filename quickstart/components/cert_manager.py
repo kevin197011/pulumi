@@ -3,29 +3,42 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-import pulumi
 import pulumi_kubernetes.helm.v3 as helm
-import pulumi_kubernetes.core.v1 as core
+from .base_component import BaseComponent
 
-def deploy():
-    ns = core.Namespace(
-        "cert-manager",
-        metadata={"name": "cert-manager"},
-        opts=pulumi.ResourceOptions(additional_secret_outputs=["metadata.name"]),
-    )
+class CertManagerComponent(BaseComponent):
+    """Cert Manager deployment component."""
 
-    release = helm.Release(
-        "cert-manager",
-        helm.ReleaseArgs(
-            chart="cert-manager",
-            version="v1.14.4",
-            namespace=ns.metadata["name"],
-            create_namespace=True,
-            repository_opts=helm.RepositoryOptsArgs(
-                repo="https://charts.jetstack.io"
-            ),
-            values={"installCRDs": True},
+    def __init__(self, name: str = "cert-manager", namespace: str = None):
+        """Initialize Cert Manager component.
+
+        Args:
+            name: Name of the component (default: cert-manager)
+            namespace: Optional namespace name
+        """
+        super().__init__(name, namespace)
+
+    def deploy(self, **kwargs):
+        """Deploy Cert Manager component.
+
+        Args:
+            **kwargs: Additional deployment configuration
+
+        Returns:
+            tuple: (release, namespace)
+        """
+        release = helm.Release(
+            self.name,
+            helm.ReleaseArgs(
+                chart="cert-manager",
+                version=kwargs.get("version", "v1.14.4"),
+                namespace=self.namespace.metadata["name"],
+                create_namespace=True,
+                repository_opts=helm.RepositoryOptsArgs(
+                    repo="https://charts.jetstack.io"
+                ),
+                values={"installCRDs": True},
+            )
         )
-    )
-
-    return release, ns
+        self._resource = release
+        return release, self.namespace

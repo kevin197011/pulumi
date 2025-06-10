@@ -5,32 +5,51 @@
 
 import pulumi
 import pulumi_kubernetes.helm.v3 as helm
-import pulumi_kubernetes.core.v1 as core
+from .base_component import BaseComponent
 
-def deploy(depends_on_release):
-    ns = core.Namespace("cattle-system", metadata={"name": "cattle-system"})
+class RancherComponent(BaseComponent):
+    """Rancher deployment component."""
 
-    release = helm.Release(
-        "rancher",
-        helm.ReleaseArgs(
-            chart="rancher",
-            version="2.11.2",
-            namespace=ns.metadata["name"],
-            repository_opts=helm.RepositoryOptsArgs(
-                repo="https://releases.rancher.com/server-charts/stable"
-            ),
-            values={
-                "replicas": 1,
-                "hostname": "rancher.local",
-                "ingress": {"enabled": False},
-                "service": {
-                    "type": "NodePort",
-                    "nodePort": 31000
+    def __init__(self, name: str = "rancher", namespace: str = "cattle-system"):
+        """Initialize Rancher component.
+
+        Args:
+            name: Name of the component (default: rancher)
+            namespace: Namespace name (default: cattle-system)
+        """
+        super().__init__(name, namespace)
+
+    def deploy(self, depends_on_release=None, **kwargs):
+        """Deploy Rancher component.
+
+        Args:
+            depends_on_release: Optional release dependency
+            **kwargs: Additional deployment configuration
+
+        Returns:
+            tuple: (release, namespace)
+        """
+        release = helm.Release(
+            self.name,
+            helm.ReleaseArgs(
+                chart="rancher",
+                version=kwargs.get("version", "2.11.2"),
+                namespace=self.namespace.metadata["name"],
+                repository_opts=helm.RepositoryOptsArgs(
+                    repo="https://releases.rancher.com/server-charts/stable"
+                ),
+                values={
+                    "replicas": kwargs.get("replicas", 1),
+                    "hostname": kwargs.get("hostname", "rancher.local"),
+                    "ingress": {"enabled": kwargs.get("ingress_enabled", False)},
+                    "service": {
+                        "type": kwargs.get("service_type", "NodePort"),
+                        "nodePort": kwargs.get("node_port", 31000)
+                    },
+                    "bootstrapPassword": kwargs.get("bootstrap_password", "admin123")
                 },
-                "bootstrapPassword": "admin123"
-            },
-        ),
-        opts=pulumi.ResourceOptions(depends_on=[depends_on_release])
-    )
-
-    return release
+            ),
+            opts=pulumi.ResourceOptions(depends_on=[depends_on_release] if depends_on_release else None)
+        )
+        self._resource = release
+        return release, self.namespace
