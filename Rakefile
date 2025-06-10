@@ -13,3 +13,10 @@ task :push do
   system 'git pull'
   system 'git push origin main'
 end
+
+task :fmt do
+  system 'black .'
+  system 'isort .'
+  system 'ruff check .'
+  system 'ruff format .'
+end
