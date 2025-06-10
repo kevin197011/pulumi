@@ -1,0 +1,38 @@
+{
+    "kind": "update",
+    "startTime": 1749557450,
+    "message": "Update 2025-06-10 20:00:10 +0800.",
+    "environment": {
+        "exec.kind": "cli",
+        "git.author": "Norton",
+        "git.author.email": "kevin197011@outlook.com",
+        "git.committer": "Norton",
+        "git.committer.email": "kevin197011@outlook.com",
+        "git.dirty": "true",
+        "git.head": "0b2f1a069f1a4c34f190215683b4500ff7f55f6e",
+        "git.headName": "refs/heads/main",
+        "pulumi.arch": "amd64",
+        "pulumi.env.PULUMI_BACKEND_URL": "set",
+        "pulumi.env.PULUMI_CONFIG_PASSPHRASE": "set",
+        "pulumi.flag.yes": "true",
+        "pulumi.os": "darwin",
+        "pulumi.version": "v3.174.0",
+        "stack.environments": "[]",
+        "updatePlan": "false",
+        "vcs.kind": "github.com",
+        "vcs.owner": "kevin197011",
+        "vcs.repo": "pulumi",
+        "vcs.root": "quickstart"
+    },
+    "config": {
+        "pulumi:tags": {
+            "pulumi:template": "kubernetes-python"
+        }
+    },
+    "version": 0,
+    "result": "succeeded",
+    "endTime": 1749557456,
+    "resourceChanges": {
+        "same": 7
+    }
+}
