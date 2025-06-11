@@ -36,17 +36,17 @@ cert_manager_release, cert_manager_namespace = cert_manager_component.deploy(
     version="v1.17.2"
 )
 
-# Deploy Rancher, depends on cert-manager
+# Deploy Rancher with Ingress
 rancher_release: Release
 rancher_namespace: Namespace
 rancher_release, rancher_namespace = rancher_component.deploy(
     depends_on_release=cert_manager_release,
     version="2.11.2",
-    hostname="rancher.local",
+    hostname="rancher.local",  # 改为你的实际域名
     replicas=1,
-    ingress_enabled=False,
-    service_type="NodePort",
-    node_port=31000,
+    ingress_class="nginx",
+    tls_source="rancher",  # 或者使用 "letsEncrypt" 配合下面的设置
+    # acme_email="your-email@example.com",  # 如果使用 Let's Encrypt，取消注释并设置邮箱
     bootstrap_password="admin123"
 )
 
@@ -65,7 +65,9 @@ cert_manager_output: Dict[str, Any] = {
 rancher_output: Dict[str, Any] = {
     "release_name": rancher_release.name,
     "namespace": rancher_namespace.metadata["name"],
-    "hostname": "rancher.local"
+    "hostname": "rancher.example.com",  # 使用相同的域名
+    "ingress_enabled": True,
+    "tls_source": "rancher"
 }
 
 # Export the outputs

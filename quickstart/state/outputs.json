@@ -1,16 +1,18 @@
 {
   "cert_manager": {
     "namespace": "cert-manager",
-    "release_name": "cert-manager-78c58e12"
+    "release_name": "cert-manager-24107b4d"
   },
   "nginx": {
     "deployment_namespace": "nginx",
-    "name": "nginx-559a1d46",
+    "name": "nginx-940ce799",
     "namespace": "nginx"
   },
   "rancher": {
-    "hostname": "rancher.local",
+    "hostname": "rancher.example.com",
+    "ingress_enabled": true,
     "namespace": "cattle-system",
-    "release_name": "rancher-15964eda"
+    "release_name": "rancher-9b37866b",
+    "tls_source": "rancher"
   }
 }

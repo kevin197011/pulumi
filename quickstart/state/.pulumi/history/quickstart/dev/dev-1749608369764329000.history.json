@@ -1,7 +1,7 @@
 {
     "kind": "update",
-    "startTime": 1749556439,
-    "message": "Update 2025-06-06 00:47:08 +0800.",
+    "startTime": 1749608294,
+    "message": "Update 2025-06-10 22:41:05 +0800.",
     "environment": {
         "exec.kind": "cli",
         "git.author": "Norton",
@@ -9,7 +9,7 @@
         "git.committer": "Norton",
         "git.committer.email": "kevin197011@outlook.com",
         "git.dirty": "true",
-        "git.head": "665a6963c048fbccaf30650dd224da0d229e5b88",
+        "git.head": "a27fb25b84a63846152444d081925ffd7db23b00",
         "git.headName": "refs/heads/main",
         "pulumi.arch": "amd64",
         "pulumi.env.PULUMI_BACKEND_URL": "set",
@@ -31,9 +31,8 @@
     },
     "version": 0,
     "result": "succeeded",
-    "endTime": 1749556530,
+    "endTime": 1749608369,
     "resourceChanges": {
-        "same": 6,
-        "update": 1
+        "create": 7
     }
 }

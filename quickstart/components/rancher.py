@@ -34,10 +34,9 @@ class RancherComponent(BaseComponent):
                 version: Chart version (default: 2.11.2)
                 hostname: Rancher hostname (default: rancher.local)
                 replicas: Number of replicas (default: 1)
-                ingress_enabled: Enable ingress (default: False)
-                service_type: Service type (default: NodePort)
-                node_port: NodePort number (default: 31000)
-                bootstrap_password: Admin password (default: admin123)
+                ingress_class: Ingress class name (default: nginx)
+                tls_source: TLS source, one of: rancher, letsEncrypt, secret (default: rancher)
+                acme_email: Email for Let's Encrypt (required if tls_source is letsEncrypt)
                 repository: Chart repository URL
                 values: Additional Helm values
 
@@ -50,19 +49,48 @@ class RancherComponent(BaseComponent):
             "https://releases.rancher.com/server-charts/stable"
         )
 
+        # 基本配置
         values: Dict[str, Any] = {
             "replicas": kwargs.get("replicas", 1),
             "hostname": kwargs.get("hostname", "rancher.local"),
             "ingress": {
-                "enabled": kwargs.get("ingress_enabled", False)
-            },
-            "service": {
-                "type": kwargs.get("service_type", "NodePort"),
-                "nodePort": kwargs.get("node_port", 31000)
+                "enabled": True,
+                "extraAnnotations": {
+                    "kubernetes.io/ingress.class": kwargs.get("ingress_class", "nginx"),
+                    "cert-manager.io/cluster-issuer": "rancher-selfsigned",
+                },
+                "tls": {
+                    "source": kwargs.get("tls_source", "rancher")
+                }
             },
             "bootstrapPassword": kwargs.get("bootstrap_password", "admin123"),
-            **(kwargs.get("values", {}))
         }
+
+        # TLS 配置
+        tls_source: str = kwargs.get("tls_source", "rancher")
+        if tls_source == "letsEncrypt":
+            acme_email = kwargs.get("acme_email")
+            if not acme_email:
+                raise ValueError("acme_email is required when using Let's Encrypt")
+            values["ingress"]["extraAnnotations"].update({
+                "cert-manager.io/cluster-issuer": "letsencrypt-prod",
+                "acme.cert-manager.io/http01-edit-in-place": "true"
+            })
+            values["ingress"]["tls"] = {
+                "source": "letsEncrypt",
+                "acme": {
+                    "email": acme_email
+                }
+            }
+        elif tls_source == "secret":
+            values["ingress"]["tls"] = {
+                "source": "secret",
+                "secretName": kwargs.get("tls_secret_name", f"{self.name}-tls")
+            }
+
+        # 合并用户提供的额外配置
+        if "values" in kwargs:
+            values.update(kwargs["values"])
 
         release: helm.Release = helm.Release(
             self.name,
