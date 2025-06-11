@@ -1,18 +1,24 @@
 {
   "cert_manager": {
     "namespace": "cert-manager",
-    "release_name": "cert-manager-24107b4d"
+    "release_name": "cert-manager-058b9ad2"
+  },
+  "ingress": {
+    "metrics_enabled": false,
+    "namespace": "ingress-nginx",
+    "release_name": "ingress-nginx-c0b6f2c3",
+    "service_type": "LoadBalancer"
   },
   "nginx": {
     "deployment_namespace": "nginx",
-    "name": "nginx-940ce799",
+    "name": "nginx-db85cd1a",
     "namespace": "nginx"
   },
   "rancher": {
-    "hostname": "rancher.example.com",
+    "hostname": "rancher.local",
     "ingress_enabled": true,
     "namespace": "cattle-system",
-    "release_name": "rancher-9b37866b",
+    "release_name": "rancher-0e744362",
     "tls_source": "rancher"
   }
 }

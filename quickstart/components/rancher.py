@@ -3,7 +3,7 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-from typing import Dict, Optional, Tuple, Any, Union
+from typing import Dict, Optional, Tuple, Any, Union, List
 import pulumi
 import pulumi_kubernetes.helm.v3 as helm
 from pulumi_kubernetes.core.v1 import Namespace
@@ -23,13 +23,13 @@ class RancherComponent(BaseComponent):
 
     def deploy(
         self,
-        depends_on_release: Optional[Union[helm.Release, Any]] = None,
+        depends_on_release: Optional[Union[pulumi.Resource, List[pulumi.Resource]]] = None,
         **kwargs: Dict[str, Any]
     ) -> Tuple[helm.Release, Namespace]:
         """Deploy Rancher component.
 
         Args:
-            depends_on_release: Optional release dependency
+            depends_on_release: Optional release dependency or list of dependencies
             **kwargs: Additional deployment configuration
                 version: Chart version (default: 2.11.2)
                 hostname: Rancher hostname (default: rancher.local)
@@ -92,6 +92,14 @@ class RancherComponent(BaseComponent):
         if "values" in kwargs:
             values.update(kwargs["values"])
 
+        # 处理依赖关系
+        resource_opts = pulumi.ResourceOptions()
+        if depends_on_release is not None:
+            if isinstance(depends_on_release, list):
+                resource_opts.depends_on = depends_on_release
+            else:
+                resource_opts.depends_on = [depends_on_release]
+
         release: helm.Release = helm.Release(
             self.name,
             helm.ReleaseArgs(
@@ -103,9 +111,7 @@ class RancherComponent(BaseComponent):
                 ),
                 values=values,
             ),
-            opts=pulumi.ResourceOptions(
-                depends_on=[depends_on_release] if depends_on_release else None
-            )
+            opts=resource_opts
         )
         self._resource = release
         return release, self.namespace

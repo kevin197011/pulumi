@@ -4,7 +4,7 @@
         "stack": "organization/quickstart/dev",
         "latest": {
             "manifest": {
-                "time": "2025-06-11T10:19:29.125722+08:00",
+                "time": "2025-06-11T11:52:10.656248+08:00",
                 "magic": "aca397c5c01e73e6cdf70d6d6782bbc85035e91382bf09bf47b318e145d08d2e",
                 "version": "v3.174.0"
             },
@@ -19,14 +19,14 @@
                     "urn": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
                     "custom": false,
                     "type": "pulumi:pulumi:Stack",
-                    "created": "2025-06-11T02:18:16.489599Z",
-                    "modified": "2025-06-11T02:18:16.489599Z",
+                    "created": "2025-06-11T03:24:41.2283Z",
+                    "modified": "2025-06-11T03:24:41.2283Z",
                     "sourcePosition": "project:///.venv/lib/python3.13/site-packages/pulumi/runtime/stack.py#140"
                 },
                 {
                     "urn": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0",
                     "custom": true,
-                    "id": "165ef857-2618-452a-a573-c45887ed3e07",
+                    "id": "4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
                     "type": "pulumi:providers:kubernetes",
                     "inputs": {
                         "__internal": {},
@@ -35,41 +35,41 @@
                     "outputs": {
                         "version": "4.23.0"
                     },
-                    "created": "2025-06-11T02:18:16.615011Z",
-                    "modified": "2025-06-11T02:18:16.615011Z"
+                    "created": "2025-06-11T03:24:41.539269Z",
+                    "modified": "2025-06-11T03:24:41.539269Z"
                 },
                 {
-                    "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::cert-manager",
+                    "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::ingress-nginx",
                     "custom": true,
-                    "id": "cert-manager",
+                    "id": "ingress-nginx",
                     "type": "kubernetes:core/v1:Namespace",
                     "inputs": {
                         "apiVersion": "v1",
                         "kind": "Namespace",
                         "metadata": {
-                            "name": "cert-manager"
+                            "name": "ingress-nginx"
                         }
                     },
                     "outputs": {
-                        "__fieldManager": "pulumi-kubernetes-3dc7dc0b",
+                        "__fieldManager": "pulumi-kubernetes-00e03c0f",
                         "__initialApiVersion": "v1",
                         "__inputs": {
                             "apiVersion": "v1",
                             "kind": "Namespace",
                             "metadata": {
-                                "name": "cert-manager"
+                                "name": "ingress-nginx"
                             }
                         },
                         "apiVersion": "v1",
                         "kind": "Namespace",
                         "metadata": {
-                            "creationTimestamp": "2025-06-11T02:18:16Z",
+                            "creationTimestamp": "2025-06-11T03:24:41Z",
                             "labels": {
-                                "kubernetes.io/metadata.name": "cert-manager"
+                                "kubernetes.io/metadata.name": "ingress-nginx"
                             },
-                            "name": "cert-manager",
-                            "resourceVersion": "434",
-                            "uid": "a407c55e-07c9-41f3-a5d8-cefd8f4bd582"
+                            "name": "ingress-nginx",
+                            "resourceVersion": "485",
+                            "uid": "aa5b977c-b084-4f62-947e-ba8ea3394bdb"
                         },
                         "spec": {
                             "finalizers": [
@@ -81,7 +81,7 @@
                         }
                     },
                     "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
-                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::165ef857-2618-452a-a573-c45887ed3e07",
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
                     "propertyDependencies": {
                         "apiVersion": [],
                         "kind": [],
@@ -90,8 +90,8 @@
                     "additionalSecretOutputs": [
                         "metadata.name"
                     ],
-                    "created": "2025-06-11T02:18:16.706637Z",
-                    "modified": "2025-06-11T02:18:16.706637Z",
+                    "created": "2025-06-11T03:24:41.735141Z",
+                    "modified": "2025-06-11T03:24:41.735141Z",
                     "sourcePosition": "project:///components/base_component.py#42"
                 },
                 {
@@ -107,7 +107,7 @@
                         }
                     },
                     "outputs": {
-                        "__fieldManager": "pulumi-kubernetes-357a041b",
+                        "__fieldManager": "pulumi-kubernetes-d5dcaf68",
                         "__initialApiVersion": "v1",
                         "__inputs": {
                             "apiVersion": "v1",
@@ -119,13 +119,13 @@
                         "apiVersion": "v1",
                         "kind": "Namespace",
                         "metadata": {
-                            "creationTimestamp": "2025-06-11T02:18:16Z",
+                            "creationTimestamp": "2025-06-11T03:24:41Z",
                             "labels": {
                                 "kubernetes.io/metadata.name": "nginx"
                             },
                             "name": "nginx",
-                            "resourceVersion": "433",
-                            "uid": "8602e5c7-b06b-47a8-a85a-8ca6d7a0a6ba"
+                            "resourceVersion": "486",
+                            "uid": "8be7d6e7-9bd2-401a-90ac-2ddc12e0d1b8"
                         },
                         "spec": {
                             "finalizers": [
@@ -137,7 +137,7 @@
                         }
                     },
                     "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
-                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::165ef857-2618-452a-a573-c45887ed3e07",
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
                     "propertyDependencies": {
                         "apiVersion": [],
                         "kind": [],
@@ -146,8 +146,8 @@
                     "additionalSecretOutputs": [
                         "metadata.name"
                     ],
-                    "created": "2025-06-11T02:18:16.706632Z",
-                    "modified": "2025-06-11T02:18:16.706632Z",
+                    "created": "2025-06-11T03:24:41.756096Z",
+                    "modified": "2025-06-11T03:24:41.756096Z",
                     "sourcePosition": "project:///components/base_component.py#42"
                 },
                 {
@@ -163,7 +163,7 @@
                         }
                     },
                     "outputs": {
-                        "__fieldManager": "pulumi-kubernetes-aee34036",
+                        "__fieldManager": "pulumi-kubernetes-b46c583b",
                         "__initialApiVersion": "v1",
                         "__inputs": {
                             "apiVersion": "v1",
@@ -175,13 +175,13 @@
                         "apiVersion": "v1",
                         "kind": "Namespace",
                         "metadata": {
-                            "creationTimestamp": "2025-06-11T02:18:16Z",
+                            "creationTimestamp": "2025-06-11T03:24:41Z",
                             "labels": {
                                 "kubernetes.io/metadata.name": "cattle-system"
                             },
                             "name": "cattle-system",
-                            "resourceVersion": "432",
-                            "uid": "3d0b208b-7ace-4217-aa11-1a3221532493"
+                            "resourceVersion": "484",
+                            "uid": "a54139cb-76e5-4fb6-89cc-f3826c02c582"
                         },
                         "spec": {
                             "finalizers": [
@@ -193,7 +193,7 @@
                         }
                     },
                     "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
-                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::165ef857-2618-452a-a573-c45887ed3e07",
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
                     "propertyDependencies": {
                         "apiVersion": [],
                         "kind": [],
@@ -202,14 +202,260 @@
                     "additionalSecretOutputs": [
                         "metadata.name"
                     ],
-                    "created": "2025-06-11T02:18:16.710539Z",
-                    "modified": "2025-06-11T02:18:16.710539Z",
+                    "created": "2025-06-11T03:24:41.756076Z",
+                    "modified": "2025-06-11T03:24:41.756076Z",
                     "sourcePosition": "project:///components/base_component.py#42"
+                },
+                {
+                    "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::cert-manager",
+                    "custom": true,
+                    "id": "cert-manager",
+                    "type": "kubernetes:core/v1:Namespace",
+                    "inputs": {
+                        "apiVersion": "v1",
+                        "kind": "Namespace",
+                        "metadata": {
+                            "name": "cert-manager"
+                        }
+                    },
+                    "outputs": {
+                        "__fieldManager": "pulumi-kubernetes-a3fdbd80",
+                        "__initialApiVersion": "v1",
+                        "__inputs": {
+                            "apiVersion": "v1",
+                            "kind": "Namespace",
+                            "metadata": {
+                                "name": "cert-manager"
+                            }
+                        },
+                        "apiVersion": "v1",
+                        "kind": "Namespace",
+                        "metadata": {
+                            "creationTimestamp": "2025-06-11T03:24:41Z",
+                            "labels": {
+                                "kubernetes.io/metadata.name": "cert-manager"
+                            },
+                            "name": "cert-manager",
+                            "resourceVersion": "487",
+                            "uid": "12a72c5e-ad5f-4363-952d-a4ee34d14eab"
+                        },
+                        "spec": {
+                            "finalizers": [
+                                "kubernetes"
+                            ]
+                        },
+                        "status": {
+                            "phase": "Active"
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
+                    "propertyDependencies": {
+                        "apiVersion": [],
+                        "kind": [],
+                        "metadata": []
+                    },
+                    "additionalSecretOutputs": [
+                        "metadata.name"
+                    ],
+                    "created": "2025-06-11T03:24:41.738913Z",
+                    "modified": "2025-06-11T03:24:41.738913Z",
+                    "sourcePosition": "project:///components/base_component.py#42"
+                },
+                {
+                    "urn": "urn:pulumi:dev::quickstart::kubernetes:helm.sh/v3:Release::cert-manager",
+                    "custom": true,
+                    "id": "cert-manager/cert-manager-058b9ad2",
+                    "type": "kubernetes:helm.sh/v3:Release",
+                    "inputs": {
+                        "allowNullValues": false,
+                        "atomic": false,
+                        "chart": "cert-manager",
+                        "cleanupOnFail": false,
+                        "createNamespace": true,
+                        "dependencyUpdate": false,
+                        "description": "",
+                        "devel": false,
+                        "disableCRDHooks": false,
+                        "disableOpenapiValidation": false,
+                        "disableWebhooks": false,
+                        "forceUpdate": false,
+                        "keyring": "",
+                        "lint": false,
+                        "name": "cert-manager-058b9ad2",
+                        "namespace": "cert-manager",
+                        "postrender": "",
+                        "recreatePods": false,
+                        "renderSubchartNotes": false,
+                        "replace": false,
+                        "repositoryOpts": {
+                            "caFile": "",
+                            "certFile": "",
+                            "keyFile": "",
+                            "password": "",
+                            "repo": "https://charts.jetstack.io",
+                            "username": ""
+                        },
+                        "resetValues": false,
+                        "reuseValues": false,
+                        "skipAwait": false,
+                        "skipCrds": false,
+                        "timeout": 300,
+                        "values": {
+                            "installCRDs": true
+                        },
+                        "verify": false,
+                        "version": "v1.17.2",
+                        "waitForJobs": false
+                    },
+                    "outputs": {
+                        "__inputs": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:zhZauAQVHURf+EEh:LDK2IXVJUnotMrda292+QMbnQ64gU9vnkfxFfLCpDX0oizTSjiYulWZxVm1ljK04TXsUrZasx5zyN0Vb/ml74FQPFKPmevyjhVuIrlBUGucTQpoos82RQzJTLs8JAS71k+cKbSJdw9uEX5i323XJNje5wpFNNNgKXcsGXxh/xE8eVJRuY3eXz3u52qoIQspE8RWHAymnNi2IplfAQ1gGyyXap4y075afGctLEOmuc1ic/pHPWIWa9HJHInSV7y9hK1LI117oehLQ1B/CQcwFGcgtINWpcG2hNn/mLk4SbcmzqbOnx2Ivvi/Ujv45S0LAY+dPriffZfW6oK5f7gg/fqHxrLtFJUJTJ9PmWMSQ5RdiQVhYkxIyYH/hPuWb4BfV3377U4lxq9AH8v2POeMvsu9xmEDNWxFTtfjWL4ZdlFipUfiVCW2IqaGfLsQd51CikIH/AOlMilhrSbvX/4AW7qWHk7bVjk3a5Wo18m0bP3K6ttsuy0cFoki9Tl2C+EB+nDXGOxua4zlPCOSmFBvUIHRPQiGtkDF4jMfbPhSA4o+jZl55nBDCF0gAH0ON9JG6UCY7Pyug8CcbqDUTflMmm0SKikUbsunhCV2O0hjJhFVw1bjAhl2EubbDnTZRmg/NWW0u7uPQxsYDVMMWPR8a+s5mj4/S5T/13euONqHOmsuPrNndNbLUS3jNYXPSRrzHDZRkJNq6at6MS14l5OXkxlsF1R3XRFhAtduUT4B0IblWrnti38Can7AJH8+lOIFyr5zB/m+DrQyECh0o2ICeaK7KxfExVFm5pf+ZqbLGv2gd/ocw5mz3ZzNHcCnzt3jwWX9c1T9LpAe4iaHLzjqyhPMRTh0rS/MESbAdkBkiPZf1CJr7j8W4EJjK7YBh4cN7VaI+YYVnRhR36IIQWBW0jemY02rHA/vP3piifbXeDgAWKNSjaGEcb+Gaohdzka68EKcaejkl36MqoWxvoT43jLupZxyIYQ=="
+                        },
+                        "allowNullValues": false,
+                        "atomic": false,
+                        "chart": "cert-manager",
+                        "cleanupOnFail": false,
+                        "createNamespace": true,
+                        "dependencyUpdate": false,
+                        "description": "",
+                        "devel": false,
+                        "disableCRDHooks": false,
+                        "disableOpenapiValidation": false,
+                        "disableWebhooks": false,
+                        "forceUpdate": false,
+                        "keyring": "",
+                        "lint": false,
+                        "name": "cert-manager-058b9ad2",
+                        "namespace": "cert-manager",
+                        "postrender": "",
+                        "recreatePods": false,
+                        "renderSubchartNotes": false,
+                        "replace": false,
+                        "repositoryOpts": {
+                            "caFile": "",
+                            "certFile": "",
+                            "keyFile": "",
+                            "password": "",
+                            "repo": "https://charts.jetstack.io",
+                            "username": ""
+                        },
+                        "resetValues": false,
+                        "resourceNames": {
+                            "ClusterRole.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
+                                "cert-manager-058b9ad2-cainjector",
+                                "cert-manager-058b9ad2-cluster-view",
+                                "cert-manager-058b9ad2-controller-approve:cert-manager-io",
+                                "cert-manager-058b9ad2-controller-certificates",
+                                "cert-manager-058b9ad2-controller-certificatesigningrequests",
+                                "cert-manager-058b9ad2-controller-challenges",
+                                "cert-manager-058b9ad2-controller-clusterissuers",
+                                "cert-manager-058b9ad2-controller-ingress-shim",
+                                "cert-manager-058b9ad2-controller-issuers",
+                                "cert-manager-058b9ad2-controller-orders",
+                                "cert-manager-058b9ad2-edit",
+                                "cert-manager-058b9ad2-view",
+                                "cert-manager-058b9ad2-webhook:subjectaccessreviews"
+                            ],
+                            "ClusterRoleBinding.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
+                                "cert-manager-058b9ad2-cainjector",
+                                "cert-manager-058b9ad2-controller-approve:cert-manager-io",
+                                "cert-manager-058b9ad2-controller-certificates",
+                                "cert-manager-058b9ad2-controller-certificatesigningrequests",
+                                "cert-manager-058b9ad2-controller-challenges",
+                                "cert-manager-058b9ad2-controller-clusterissuers",
+                                "cert-manager-058b9ad2-controller-ingress-shim",
+                                "cert-manager-058b9ad2-controller-issuers",
+                                "cert-manager-058b9ad2-controller-orders",
+                                "cert-manager-058b9ad2-webhook:subjectaccessreviews"
+                            ],
+                            "CustomResourceDefinition.apiextensions.k8s.io/apiextensions.k8s.io/v1": [
+                                "certificaterequests.cert-manager.io",
+                                "certificates.cert-manager.io",
+                                "challenges.acme.cert-manager.io",
+                                "clusterissuers.cert-manager.io",
+                                "issuers.cert-manager.io",
+                                "orders.acme.cert-manager.io"
+                            ],
+                            "Deployment.apps/apps/v1": [
+                                "cert-manager/cert-manager-058b9ad2",
+                                "cert-manager/cert-manager-058b9ad2-cainjector",
+                                "cert-manager/cert-manager-058b9ad2-webhook"
+                            ],
+                            "MutatingWebhookConfiguration.admissionregistration.k8s.io/admissionregistration.k8s.io/v1": [
+                                "cert-manager-058b9ad2-webhook"
+                            ],
+                            "Role.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
+                                "cert-manager/cert-manager-058b9ad2-tokenrequest",
+                                "cert-manager/cert-manager-058b9ad2-webhook:dynamic-serving",
+                                "kube-system/cert-manager-058b9ad2-cainjector:leaderelection",
+                                "kube-system/cert-manager-058b9ad2:leaderelection"
+                            ],
+                            "RoleBinding.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
+                                "cert-manager/cert-manager-058b9ad2-cert-manager-058b9ad2-tokenrequest",
+                                "cert-manager/cert-manager-058b9ad2-webhook:dynamic-serving",
+                                "kube-system/cert-manager-058b9ad2-cainjector:leaderelection",
+                                "kube-system/cert-manager-058b9ad2:leaderelection"
+                            ],
+                            "Service/v1": [
+                                "cert-manager/cert-manager-058b9ad2",
+                                "cert-manager/cert-manager-058b9ad2-cainjector",
+                                "cert-manager/cert-manager-058b9ad2-webhook"
+                            ],
+                            "ServiceAccount/v1": [
+                                "cert-manager/cert-manager-058b9ad2",
+                                "cert-manager/cert-manager-058b9ad2-cainjector",
+                                "cert-manager/cert-manager-058b9ad2-webhook"
+                            ],
+                            "ValidatingWebhookConfiguration.admissionregistration.k8s.io/admissionregistration.k8s.io/v1": [
+                                "cert-manager-058b9ad2-webhook"
+                            ]
+                        },
+                        "reuseValues": false,
+                        "skipAwait": false,
+                        "skipCrds": false,
+                        "status": {
+                            "appVersion": "v1.17.2",
+                            "chart": "cert-manager",
+                            "name": "cert-manager-058b9ad2",
+                            "namespace": "cert-manager",
+                            "revision": 1,
+                            "status": "deployed",
+                            "version": "v1.17.2"
+                        },
+                        "timeout": 300,
+                        "values": {
+                            "installCRDs": true
+                        },
+                        "verify": false,
+                        "version": "v1.17.2",
+                        "waitForJobs": false
+                    },
+                    "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::cert-manager"
+                    ],
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
+                    "propertyDependencies": {
+                        "chart": [],
+                        "compat": [],
+                        "createNamespace": [],
+                        "namespace": [
+                            "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::cert-manager"
+                        ],
+                        "repositoryOpts": [],
+                        "values": [],
+                        "version": []
+                    },
+                    "created": "2025-06-11T03:25:13.087946Z",
+                    "modified": "2025-06-11T03:25:13.087946Z",
+                    "sourcePosition": "project:///components/cert_manager.py#43"
                 },
                 {
                     "urn": "urn:pulumi:dev::quickstart::kubernetes:apps/v1:Deployment::nginx",
                     "custom": true,
-                    "id": "nginx/nginx-940ce799",
+                    "id": "nginx/nginx-db85cd1a",
                     "type": "kubernetes:apps/v1:Deployment",
                     "inputs": {
                         "apiVersion": "apps/v1",
@@ -218,7 +464,7 @@
                             "annotations": {
                                 "pulumi.com/autonamed": "true"
                             },
-                            "name": "nginx-940ce799",
+                            "name": "nginx-db85cd1a",
                             "namespace": "nginx"
                         },
                         "spec": {
@@ -278,7 +524,7 @@
                         }
                     },
                     "outputs": {
-                        "__fieldManager": "pulumi-kubernetes-521aeac0",
+                        "__fieldManager": "pulumi-kubernetes-d0edd4d0",
                         "__initialApiVersion": "apps/v1",
                         "__inputs": {
                             "apiVersion": "apps/v1",
@@ -287,7 +533,7 @@
                                 "annotations": {
                                     "pulumi.com/autonamed": "true"
                                 },
-                                "name": "nginx-940ce799",
+                                "name": "nginx-db85cd1a",
                                 "namespace": "nginx"
                             },
                             "spec": {
@@ -353,7 +599,7 @@
                                 "deployment.kubernetes.io/revision": "1",
                                 "pulumi.com/autonamed": "true"
                             },
-                            "creationTimestamp": "2025-06-11T02:18:17Z",
+                            "creationTimestamp": "2025-06-11T03:24:46Z",
                             "generation": 1,
                             "managedFields": [
                                 {
@@ -419,9 +665,9 @@
                                             }
                                         }
                                     },
-                                    "manager": "pulumi-kubernetes-521aeac0",
+                                    "manager": "pulumi-kubernetes-d0edd4d0",
                                     "operation": "Apply",
-                                    "time": "2025-06-11T02:18:17Z"
+                                    "time": "2025-06-11T03:24:46Z"
                                 },
                                 {
                                     "apiVersion": "apps/v1",
@@ -464,13 +710,13 @@
                                     "manager": "k3s",
                                     "operation": "Update",
                                     "subresource": "status",
-                                    "time": "2025-06-11T02:18:28Z"
+                                    "time": "2025-06-11T03:25:11Z"
                                 }
                             ],
-                            "name": "nginx-940ce799",
+                            "name": "nginx-db85cd1a",
                             "namespace": "nginx",
-                            "resourceVersion": "607",
-                            "uid": "f56d7841-1f77-4ff4-944f-04cd2b3c7fee"
+                            "resourceVersion": "823",
+                            "uid": "6c9acb63-9401-47b0-953d-8a4d0c0ac7ca"
                         },
                         "spec": {
                             "progressDeadlineSeconds": 600,
@@ -556,17 +802,17 @@
                             "availableReplicas": 1,
                             "conditions": [
                                 {
-                                    "lastTransitionTime": "2025-06-11T02:18:28Z",
-                                    "lastUpdateTime": "2025-06-11T02:18:28Z",
+                                    "lastTransitionTime": "2025-06-11T03:25:11Z",
+                                    "lastUpdateTime": "2025-06-11T03:25:11Z",
                                     "message": "Deployment has minimum availability.",
                                     "reason": "MinimumReplicasAvailable",
                                     "status": "True",
                                     "type": "Available"
                                 },
                                 {
-                                    "lastTransitionTime": "2025-06-11T02:18:17Z",
-                                    "lastUpdateTime": "2025-06-11T02:18:28Z",
-                                    "message": "ReplicaSet \"nginx-940ce799-59bf4f87c7\" has successfully progressed.",
+                                    "lastTransitionTime": "2025-06-11T03:24:46Z",
+                                    "lastUpdateTime": "2025-06-11T03:25:11Z",
+                                    "message": "ReplicaSet \"nginx-db85cd1a-59bf4f87c7\" has successfully progressed.",
                                     "reason": "NewReplicaSetAvailable",
                                     "status": "True",
                                     "type": "Progressing"
@@ -582,7 +828,7 @@
                     "dependencies": [
                         "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::nginx"
                     ],
-                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::165ef857-2618-452a-a573-c45887ed3e07",
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
                     "propertyDependencies": {
                         "apiVersion": [],
                         "kind": [],
@@ -591,21 +837,21 @@
                         ],
                         "spec": []
                     },
-                    "created": "2025-06-11T02:18:28.335874Z",
-                    "modified": "2025-06-11T02:18:28.335874Z",
+                    "created": "2025-06-11T03:25:11.222703Z",
+                    "modified": "2025-06-11T03:25:11.222703Z",
                     "sourcePosition": "project:///components/nginx.py#37"
                 },
                 {
-                    "urn": "urn:pulumi:dev::quickstart::kubernetes:helm.sh/v3:Release::cert-manager",
+                    "urn": "urn:pulumi:dev::quickstart::kubernetes:helm.sh/v3:Release::ingress-nginx",
                     "custom": true,
-                    "id": "cert-manager/cert-manager-24107b4d",
+                    "id": "ingress-nginx/ingress-nginx-c0b6f2c3",
                     "type": "kubernetes:helm.sh/v3:Release",
                     "inputs": {
                         "allowNullValues": false,
                         "atomic": false,
-                        "chart": "cert-manager",
+                        "chart": "ingress-nginx",
                         "cleanupOnFail": false,
-                        "createNamespace": true,
+                        "createNamespace": false,
                         "dependencyUpdate": false,
                         "description": "",
                         "devel": false,
@@ -615,8 +861,8 @@
                         "forceUpdate": false,
                         "keyring": "",
                         "lint": false,
-                        "name": "cert-manager-24107b4d",
-                        "namespace": "cert-manager",
+                        "name": "ingress-nginx-c0b6f2c3",
+                        "namespace": "ingress-nginx",
                         "postrender": "",
                         "recreatePods": false,
                         "renderSubchartNotes": false,
@@ -626,31 +872,178 @@
                             "certFile": "",
                             "keyFile": "",
                             "password": "",
-                            "repo": "https://charts.jetstack.io",
+                            "repo": "https://kubernetes.github.io/ingress-nginx",
                             "username": ""
                         },
                         "resetValues": false,
                         "reuseValues": false,
                         "skipAwait": false,
                         "skipCrds": false,
-                        "timeout": 300,
+                        "timeout": 600,
                         "values": {
-                            "installCRDs": true
+                            "controller": {
+                                "admissionWebhooks": {
+                                    "enabled": true,
+                                    "patch": {
+                                        "enabled": true,
+                                        "resources": {
+                                            "limits": {
+                                                "cpu": "100m",
+                                                "memory": "100Mi"
+                                            },
+                                            "requests": {
+                                                "cpu": "50m",
+                                                "memory": "50Mi"
+                                            }
+                                        }
+                                    }
+                                },
+                                "config": {
+                                    "client-body-timeout": "60s",
+                                    "client-header-timeout": "60s",
+                                    "compute-full-forwarded-for": "true",
+                                    "enable-real-ip": "true",
+                                    "keep-alive": "75",
+                                    "keep-alive-requests": "100",
+                                    "proxy-body-size": "50m",
+                                    "proxy-connect-timeout": "60s",
+                                    "proxy-read-timeout": "60s",
+                                    "proxy-send-timeout": "60s",
+                                    "upstream-keepalive-connections": "100",
+                                    "upstream-keepalive-timeout": "60",
+                                    "use-forwarded-headers": "true",
+                                    "use-proxy-protocol": "false"
+                                },
+                                "containerSecurityContext": {
+                                    "allowPrivilegeEscalation": true,
+                                    "capabilities": {
+                                        "add": [
+                                            "NET_BIND_SERVICE"
+                                        ],
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "runAsGroup": 101,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 101
+                                },
+                                "extraArgs": {
+                                    "default-ssl-certificate": "ingress-nginx/tls-secret"
+                                },
+                                "image": {
+                                    "allowPrivilegeEscalation": false
+                                },
+                                "livenessProbe": {
+                                    "enabled": true,
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 10254,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 10,
+                                    "periodSeconds": 10,
+                                    "timeoutSeconds": 2
+                                },
+                                "metrics": {
+                                    "enabled": false,
+                                    "serviceMonitor": {
+                                        "enabled": false
+                                    }
+                                },
+                                "minReadySeconds": 0,
+                                "name": "controller",
+                                "podSecurityContext": {
+                                    "fsGroup": 101,
+                                    "runAsGroup": 101,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 101
+                                },
+                                "readinessProbe": {
+                                    "enabled": true,
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 10254,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 5,
+                                    "periodSeconds": 5,
+                                    "timeoutSeconds": 2
+                                },
+                                "replicaCount": 1,
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "200m",
+                                        "memory": "256Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "50m",
+                                        "memory": "90Mi"
+                                    }
+                                },
+                                "service": {
+                                    "enabled": true,
+                                    "externalTrafficPolicy": "Local",
+                                    "type": "LoadBalancer"
+                                },
+                                "startupProbe": {
+                                    "enabled": true,
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 10254,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 5,
+                                    "periodSeconds": 5,
+                                    "timeoutSeconds": 2
+                                },
+                                "terminationGracePeriodSeconds": 30
+                            },
+                            "defaultBackend": {
+                                "enabled": true,
+                                "minReadySeconds": 0,
+                                "replicaCount": 1,
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "20m",
+                                        "memory": "40Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "10m",
+                                        "memory": "20Mi"
+                                    }
+                                },
+                                "startupProbe": {
+                                    "enabled": true,
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 8080,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 5,
+                                    "periodSeconds": 5,
+                                    "timeoutSeconds": 2
+                                }
+                            }
                         },
                         "verify": false,
-                        "version": "v1.17.2",
+                        "version": "4.9.1",
                         "waitForJobs": false
                     },
                     "outputs": {
                         "__inputs": {
                             "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
-                            "ciphertext": "v1:cexIQZCK6R7uSwqv:fcBDZS+U5qnGlkvAoDPiPRHZYdxmUcMTp6I2wNptpHc9synqCw/e41RGjv6cQHj8BhZBTtAHT+Ye4eXWumPALzCeF1FTjUXml+DHRo4AGRy7DllfwdgjANlxgTV8EvrVwLP/fLH+IgXM4IhrczdCtP1Qt/UQbu1CtYtwgOZIASNU1Aa09EbjHkYRe+m8rknigI/rHYsPYEImBPHsoWZVdGh85vnm0cj++Ys6y1TkJvls188eudE85yc46TE6DFxG2QCrl7PT9GvTUiie2iyJkEzbHXu8ctuk8Lc511LoGeVPSIc5sRvZxMmYx4sLilsUct6Ai0amHpjGg3aOJmG0qZAUr8XE+Zsmniac0ZFDY1c5antkLIH07gCA2vbOE66tRcLmptH0z3MUiVDplDSD1Sjt+6f/vIkmeccSC6gFF3uPm8aTg0lF2agTusJ+HxD752Vx5w4aE44nTpe0/H+gvLyTsNjOakqXQ4BS57Z3Oyej68ThtKjPAIVN5MGEXSVFClw8C4UbOYAmF7jr65XcYOYJtLJbWYJ+S3tmJOyYlgVJoqC4d72tPsSPfxf7p+sZ7gcTClRCJX3qmnLoiyY5tl/z1nqZgjRSIXkYjuwHl5U6r0Easi35EDKlW/51iDRw+stFDOYcDS7gP89M+uX3wWspV0sNBoJPobnMiexOGuMhhP6IG0SjYnbc3XDUdIFGhgVUawnbNg6vFqcPfrcsdDvOQj1Fx+56KzyQOFz8IeLZZiGXdsotXyVLFydHdFU1YVd+goQwl4WZiWkVtirOu4P4QFy9Nt0BvXih5EbVwzcg6u12IKyEk1mPOdZJoxJlU6XfrxJNP8wd8dEfE8/ojcxE+D8/KlLGl82d3Ya3FM59P/QdPgmgLrvZuCNsadL9D1vgmSfL6cuBENtiGxZ7VO71eRGt1+3Xn9aKhPA8mBcWZDISMPir8uCDf5xBhuReN++VN0eWJvoFndSH2mp6eh9xdeSgvA=="
+                            "ciphertext": "v1:m6apl06Ku0AmowYl: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"
                         },
                         "allowNullValues": false,
                         "atomic": false,
-                        "chart": "cert-manager",
+                        "chart": "ingress-nginx",
                         "cleanupOnFail": false,
-                        "createNamespace": true,
+                        "createNamespace": false,
                         "dependencyUpdate": false,
                         "description": "",
                         "devel": false,
@@ -660,8 +1053,8 @@
                         "forceUpdate": false,
                         "keyring": "",
                         "lint": false,
-                        "name": "cert-manager-24107b4d",
-                        "namespace": "cert-manager",
+                        "name": "ingress-nginx-c0b6f2c3",
+                        "namespace": "ingress-nginx",
                         "postrender": "",
                         "recreatePods": false,
                         "renderSubchartNotes": false,
@@ -671,124 +1064,242 @@
                             "certFile": "",
                             "keyFile": "",
                             "password": "",
-                            "repo": "https://charts.jetstack.io",
+                            "repo": "https://kubernetes.github.io/ingress-nginx",
                             "username": ""
                         },
                         "resetValues": false,
                         "resourceNames": {
                             "ClusterRole.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
-                                "cert-manager-24107b4d-cainjector",
-                                "cert-manager-24107b4d-cluster-view",
-                                "cert-manager-24107b4d-controller-approve:cert-manager-io",
-                                "cert-manager-24107b4d-controller-certificates",
-                                "cert-manager-24107b4d-controller-certificatesigningrequests",
-                                "cert-manager-24107b4d-controller-challenges",
-                                "cert-manager-24107b4d-controller-clusterissuers",
-                                "cert-manager-24107b4d-controller-ingress-shim",
-                                "cert-manager-24107b4d-controller-issuers",
-                                "cert-manager-24107b4d-controller-orders",
-                                "cert-manager-24107b4d-edit",
-                                "cert-manager-24107b4d-view",
-                                "cert-manager-24107b4d-webhook:subjectaccessreviews"
+                                "ingress-nginx-c0b6f2c3"
                             ],
                             "ClusterRoleBinding.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
-                                "cert-manager-24107b4d-cainjector",
-                                "cert-manager-24107b4d-controller-approve:cert-manager-io",
-                                "cert-manager-24107b4d-controller-certificates",
-                                "cert-manager-24107b4d-controller-certificatesigningrequests",
-                                "cert-manager-24107b4d-controller-challenges",
-                                "cert-manager-24107b4d-controller-clusterissuers",
-                                "cert-manager-24107b4d-controller-ingress-shim",
-                                "cert-manager-24107b4d-controller-issuers",
-                                "cert-manager-24107b4d-controller-orders",
-                                "cert-manager-24107b4d-webhook:subjectaccessreviews"
+                                "ingress-nginx-c0b6f2c3"
                             ],
-                            "CustomResourceDefinition.apiextensions.k8s.io/apiextensions.k8s.io/v1": [
-                                "certificaterequests.cert-manager.io",
-                                "certificates.cert-manager.io",
-                                "challenges.acme.cert-manager.io",
-                                "clusterissuers.cert-manager.io",
-                                "issuers.cert-manager.io",
-                                "orders.acme.cert-manager.io"
+                            "ConfigMap/v1": [
+                                "ingress-nginx/ingress-nginx-c0b6f2c3-controller"
                             ],
                             "Deployment.apps/apps/v1": [
-                                "cert-manager/cert-manager-24107b4d",
-                                "cert-manager/cert-manager-24107b4d-cainjector",
-                                "cert-manager/cert-manager-24107b4d-webhook"
+                                "ingress-nginx/ingress-nginx-c0b6f2c3-controller",
+                                "ingress-nginx/ingress-nginx-c0b6f2c3-defaultbackend"
                             ],
-                            "MutatingWebhookConfiguration.admissionregistration.k8s.io/admissionregistration.k8s.io/v1": [
-                                "cert-manager-24107b4d-webhook"
+                            "IngressClass.networking.k8s.io/networking.k8s.io/v1": [
+                                "nginx"
                             ],
                             "Role.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
-                                "cert-manager/cert-manager-24107b4d-tokenrequest",
-                                "cert-manager/cert-manager-24107b4d-webhook:dynamic-serving",
-                                "kube-system/cert-manager-24107b4d-cainjector:leaderelection",
-                                "kube-system/cert-manager-24107b4d:leaderelection"
+                                "ingress-nginx/ingress-nginx-c0b6f2c3"
                             ],
                             "RoleBinding.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
-                                "cert-manager/cert-manager-24107b4d-cert-manager-24107b4d-tokenrequest",
-                                "cert-manager/cert-manager-24107b4d-webhook:dynamic-serving",
-                                "kube-system/cert-manager-24107b4d-cainjector:leaderelection",
-                                "kube-system/cert-manager-24107b4d:leaderelection"
+                                "ingress-nginx/ingress-nginx-c0b6f2c3"
                             ],
                             "Service/v1": [
-                                "cert-manager/cert-manager-24107b4d",
-                                "cert-manager/cert-manager-24107b4d-cainjector",
-                                "cert-manager/cert-manager-24107b4d-webhook"
+                                "ingress-nginx/ingress-nginx-c0b6f2c3-controller",
+                                "ingress-nginx/ingress-nginx-c0b6f2c3-controller-admission",
+                                "ingress-nginx/ingress-nginx-c0b6f2c3-defaultbackend"
                             ],
                             "ServiceAccount/v1": [
-                                "cert-manager/cert-manager-24107b4d",
-                                "cert-manager/cert-manager-24107b4d-cainjector",
-                                "cert-manager/cert-manager-24107b4d-webhook"
+                                "ingress-nginx/ingress-nginx-c0b6f2c3",
+                                "ingress-nginx/ingress-nginx-c0b6f2c3-backend"
                             ],
                             "ValidatingWebhookConfiguration.admissionregistration.k8s.io/admissionregistration.k8s.io/v1": [
-                                "cert-manager-24107b4d-webhook"
+                                "ingress-nginx-c0b6f2c3-admission"
                             ]
                         },
                         "reuseValues": false,
                         "skipAwait": false,
                         "skipCrds": false,
                         "status": {
-                            "appVersion": "v1.17.2",
-                            "chart": "cert-manager",
-                            "name": "cert-manager-24107b4d",
-                            "namespace": "cert-manager",
-                            "revision": 1,
+                            "appVersion": "1.9.6",
+                            "chart": "ingress-nginx",
+                            "name": "ingress-nginx-c0b6f2c3",
+                            "namespace": "ingress-nginx",
+                            "revision": 2,
                             "status": "deployed",
-                            "version": "v1.17.2"
+                            "version": "4.9.1"
                         },
-                        "timeout": 300,
+                        "timeout": 600,
                         "values": {
-                            "installCRDs": true
+                            "controller": {
+                                "admissionWebhooks": {
+                                    "enabled": true,
+                                    "patch": {
+                                        "enabled": true,
+                                        "resources": {
+                                            "limits": {
+                                                "cpu": "100m",
+                                                "memory": "100Mi"
+                                            },
+                                            "requests": {
+                                                "cpu": "50m",
+                                                "memory": "50Mi"
+                                            }
+                                        }
+                                    }
+                                },
+                                "config": {
+                                    "client-body-timeout": "60s",
+                                    "client-header-timeout": "60s",
+                                    "compute-full-forwarded-for": "true",
+                                    "enable-real-ip": "true",
+                                    "keep-alive": "75",
+                                    "keep-alive-requests": "100",
+                                    "proxy-body-size": "50m",
+                                    "proxy-connect-timeout": "60s",
+                                    "proxy-read-timeout": "60s",
+                                    "proxy-send-timeout": "60s",
+                                    "upstream-keepalive-connections": "100",
+                                    "upstream-keepalive-timeout": "60",
+                                    "use-forwarded-headers": "true",
+                                    "use-proxy-protocol": "false"
+                                },
+                                "containerSecurityContext": {
+                                    "allowPrivilegeEscalation": true,
+                                    "capabilities": {
+                                        "add": [
+                                            "NET_BIND_SERVICE"
+                                        ],
+                                        "drop": [
+                                            "ALL"
+                                        ]
+                                    },
+                                    "runAsGroup": 101,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 101
+                                },
+                                "extraArgs": {
+                                    "default-ssl-certificate": "ingress-nginx/tls-secret"
+                                },
+                                "image": {
+                                    "allowPrivilegeEscalation": false
+                                },
+                                "livenessProbe": {
+                                    "enabled": true,
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 10254,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 10,
+                                    "periodSeconds": 10,
+                                    "timeoutSeconds": 2
+                                },
+                                "metrics": {
+                                    "enabled": false,
+                                    "serviceMonitor": {
+                                        "enabled": false
+                                    }
+                                },
+                                "minReadySeconds": 0,
+                                "name": "controller",
+                                "podSecurityContext": {
+                                    "fsGroup": 101,
+                                    "runAsGroup": 101,
+                                    "runAsNonRoot": true,
+                                    "runAsUser": 101
+                                },
+                                "readinessProbe": {
+                                    "enabled": true,
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 10254,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 5,
+                                    "periodSeconds": 5,
+                                    "timeoutSeconds": 2
+                                },
+                                "replicaCount": 1,
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "200m",
+                                        "memory": "256Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "50m",
+                                        "memory": "90Mi"
+                                    }
+                                },
+                                "service": {
+                                    "enabled": true,
+                                    "externalTrafficPolicy": "Local",
+                                    "type": "LoadBalancer"
+                                },
+                                "startupProbe": {
+                                    "enabled": true,
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 10254,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 5,
+                                    "periodSeconds": 5,
+                                    "timeoutSeconds": 2
+                                },
+                                "terminationGracePeriodSeconds": 30
+                            },
+                            "defaultBackend": {
+                                "enabled": true,
+                                "minReadySeconds": 0,
+                                "replicaCount": 1,
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "20m",
+                                        "memory": "40Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "10m",
+                                        "memory": "20Mi"
+                                    }
+                                },
+                                "startupProbe": {
+                                    "enabled": true,
+                                    "failureThreshold": 3,
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": 8080,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 5,
+                                    "periodSeconds": 5,
+                                    "timeoutSeconds": 2
+                                }
+                            }
                         },
                         "verify": false,
-                        "version": "v1.17.2",
+                        "version": "4.9.1",
                         "waitForJobs": false
                     },
                     "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
                     "dependencies": [
-                        "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::cert-manager"
+                        "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::ingress-nginx"
                     ],
-                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::165ef857-2618-452a-a573-c45887ed3e07",
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
                     "propertyDependencies": {
                         "chart": [],
                         "compat": [],
-                        "createNamespace": [],
                         "namespace": [
-                            "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::cert-manager"
+                            "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::ingress-nginx"
                         ],
                         "repositoryOpts": [],
+                        "timeout": [],
                         "values": [],
                         "version": []
                     },
-                    "created": "2025-06-11T02:18:52.79913Z",
-                    "modified": "2025-06-11T02:18:52.79913Z",
-                    "sourcePosition": "project:///components/cert_manager.py#43"
+                    "customTimeouts": {
+                        "create": 600,
+                        "update": 600,
+                        "delete": 300
+                    },
+                    "created": "2025-06-11T03:34:54.286696Z",
+                    "modified": "2025-06-11T03:51:20.492288Z",
+                    "sourcePosition": "project:///components/ingress.py#209"
                 },
                 {
                     "urn": "urn:pulumi:dev::quickstart::kubernetes:helm.sh/v3:Release::rancher",
                     "custom": true,
-                    "id": "cattle-system/rancher-9b37866b",
+                    "id": "cattle-system/rancher-0e744362",
                     "type": "kubernetes:helm.sh/v3:Release",
                     "inputs": {
                         "allowNullValues": false,
@@ -805,7 +1316,7 @@
                         "forceUpdate": false,
                         "keyring": "",
                         "lint": false,
-                        "name": "rancher-9b37866b",
+                        "name": "rancher-0e744362",
                         "namespace": "cattle-system",
                         "postrender": "",
                         "recreatePods": false,
@@ -846,7 +1357,7 @@
                     "outputs": {
                         "__inputs": {
                             "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
-                            "ciphertext": "v1:sIbFpEsOOmDx9raB:YJBo55tE3QYKCOLX5CikwYnBTgWTA47mpVVFe8CGkN9bNPzZP66UpAdVL9oSw4yaSs8levXEQQfofR6KqBYEvXGGn8PPx/HHRi7vXjCbptzMXPwfIc8udgByANBvOZBOJxjrzAYeUw1/uJ4QZ4Mx0V38Eye7FXylMw7Y196fDNJkrtClGDkg6yteg+kxgNxFY/6Wd9+4tWT+RLPilOB+JbW2xf2ltzDS5iN+w4bC4rFBUzs/XSKkXgfo3+njtjCE/WwLB3/PDu9FX+EEKfK0wTm4hTfCHvAb71OE6hH7k3VKdFvfLrZu35JHlNlvDqSZDdsQ5bonqDAXMrRw3pWB0hS9K1zLtWxnu1/pvjmagoP9WmO/CXzb1FKSC0rKBAozEOaTTSJ4rNw0zGd7285OMtHHJ9L5bm1A7Jf5gfrqReDO8myJNZo0a2e8q7xjzAOqS/4WeN3MtOM3pyNl7iNO1E5G814j9wrRJB/ewYPEnVeZNCQLbO1hC2pBSv6z72VRu1UmV0hrUAsSTERqt6iktuMlIwIMLnMVaaSrMJNZG/6znDdbwkmVMaE2f10tmWzWbvnESXngkGTfQR8VGAp1E7npw5TaTcMLw+MayHUG4gkVBBCGueKJ21FOad8C3sPaJ9j71xi+mhbi+r3QuPplAWR8Woigc4121f4F8bCrwBeE3HTSvJJ0DsyKJHDrHO+tCHoVu0nVDQXlaAL2MRoq+Dmuj1nge6VG7qZx+crHD9objsjDIOlrZfafpHX4r1PyOpMa057sCbMrUuvPcxcp/P4/lu+UUP8UEkj9DiLCNVjK69fNMuj7Wl/foTkrbfb83rUBJDIwcrhivfn1k5AIpQ3+cVlDZAR3bsNk5NJEqPocltBIqrChH33NkFg/B9GHw+74O0Bk1f68YEsVsNWTrjYJwY1fqfwNr/mQvrf4sqRE0S1wT+U1t8/rP8AeHc0IA0Q93oym1s1wiIi8Rp6EzhhhZmLsdB2/NuKpMsi75Zf051zaMoEW3z/sDA0GYx/OANONwg/NTZMeZLRSe4oZEQJ6AB9jry30xwON/JjKGKK46BbWwyxI41MXfXwYO1jzS2MP/Kf3bJCIUN3QENvk0P5nww19dhQkd/cPbewvo3TUzVY+2FCivWZp7LXOQcrZqXlBT44mMAlRlVW9jIw3gl7AzMOKa4YpSRANZ4R63ypVR+q+IiC1SQnUkQiT68SUDO6F/o27Xtx5RiC7XtLwrXZ60kYtsFqHctOBI/Jf/01ebrL4i2dojKumJKm03zLqz9Gkd9tT9E/D+E6K4C0A"
+                            "ciphertext": "v1:IIBhyj5XMwJOiz9h:93L9oP7O0Sjd40bPspT8Kki3O684yPcY7hWoe2+QCMDWuan95e3psNTYWIJrxrpJEs/v/TFpstQV1V7xFtcjRmxQul0SO7eb97sp7nKmvbP2ZdoyV61Od+h2nwVRGS8Jr3Qd4uCMyr0dUSfyHn/3tCrKX/0ehM/i3pI6dGw9+Bv06CzmIHvnyZaCGhSJr309RlF04rxfPAPv66YdM4FCKdObKwlFVNJcRPrJZ+rZlwLsbUwdKHbHqm+Dkv5vWIqpT9EyuW3c++d97lJI2GHxY45iMHOh/yJ6K5H4MaHROKR+pltxVbPEegvKvkFrlv+r/43JNovwTPX8RwJZ26W5QNZFjk3Zo2nk73525iORa/jvr06WUEj8GJ/0QwZ10POJWYMfJjrGJIPrfiNT8Xoug7QAcJmdqqA8Q/Kx75DD9yidPLj4AFQbxk3SZQ+XyKtPaAmNS3TU7tF2t/Xplvh0EHYX4+JGICPZCLytU5WJvdWEHbrj5tTFwLppVLMIffy117tEykoP7OGJoIGhbYgvbg2Ck0Gd+S/Yn6zRI6TaW1ok7hG8qwdGnF82RMszr2ohhpaujsFcVk/2rpwWJ848L7/ZpS1WkwwT1J4WjsZ4ft2aLBbdDldrEugclPuMt3RAcxSzR44P2pKy9xXE6L+Rv05TvAfNKb8N+pscKyzcSpob+u7VpX6vVfalK88WR1f3ceunsjTMBRcush5/dN08Rgtve6TkTnzDsZuJOljVTqqGkFDZLGCXIKXEd4mrThHEq7cDo4jCcc4rFW+I5LqBN2sXOjjTysEspZ+X/WYx88WILUu/aPw6H2jSExQRybIV6CebxlaC76P/8Xvi4sPPs0MO4IUwZAM33zPeTwMdfZnKhJpXdd7mxQOSV586AZOOKfUVBgM3qULtKjdssQrgqPAKghYD/TzBpMDLksiinGW/qQ32HIvdWbSdVGRt2xy0rW7UEzfko59q6EXWSPR8TazJL01ZPlOj7lvoQ13RbgxJjaXLX8O7nuY2KkoKnWTq2iC2O9Fg7bvLsfh58xEI+ACMaQPeNZN2P0Q2P7Jd1Oy6ZlWo+qQxwR66rpULLVWpDqewkhZF0Kvk3QTFfD/wnPLaRWq4+YeSyKEVIyi9lmev0rVwtluMICDBkkW16KHe5Nkf7x86/18kYW+CyXAxafpJXF/AOwXoqtdwOC4YKUxupvfIiQMf3XKmt3AsKWAlTyLS4KmeoZ92WDJ603JK5bt1qZfr0sjHulvfhTaXBjsY305dlJVh933sJ2z+dEDE4qNS3c/3NgmcDxHyD3fz"
                         },
                         "allowNullValues": false,
                         "atomic": false,
@@ -862,7 +1373,7 @@
                         "forceUpdate": false,
                         "keyring": "",
                         "lint": false,
-                        "name": "rancher-9b37866b",
+                        "name": "rancher-0e744362",
                         "namespace": "cattle-system",
                         "postrender": "",
                         "recreatePods": false,
@@ -879,28 +1390,28 @@
                         "resetValues": false,
                         "resourceNames": {
                             "ClusterRoleBinding.rbac.authorization.k8s.io/rbac.authorization.k8s.io/v1": [
-                                "rancher-9b37866b"
+                                "rancher-0e744362"
                             ],
                             "ConfigMap/v1": [
                                 "rancher-config"
                             ],
                             "Deployment.apps/apps/v1": [
-                                "rancher-9b37866b"
+                                "rancher-0e744362"
                             ],
                             "Ingress.networking.k8s.io/networking.k8s.io/v1": [
-                                "rancher-9b37866b"
+                                "rancher-0e744362"
                             ],
                             "Issuer.cert-manager.io/cert-manager.io/v1": [
-                                "rancher-9b37866b"
+                                "rancher-0e744362"
                             ],
                             "PriorityClass.scheduling.k8s.io/scheduling.k8s.io/v1": [
                                 "rancher-critical"
                             ],
                             "Service/v1": [
-                                "rancher-9b37866b"
+                                "rancher-0e744362"
                             ],
                             "ServiceAccount/v1": [
-                                "rancher-9b37866b"
+                                "rancher-0e744362"
                             ]
                         },
                         "reuseValues": false,
@@ -909,7 +1420,7 @@
                         "status": {
                             "appVersion": "v2.11.2",
                             "chart": "rancher",
-                            "name": "rancher-9b37866b",
+                            "name": "rancher-0e744362",
                             "namespace": "cattle-system",
                             "revision": 1,
                             "status": "deployed",
@@ -937,10 +1448,11 @@
                     },
                     "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
                     "dependencies": [
-                        "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::cattle-system",
-                        "urn:pulumi:dev::quickstart::kubernetes:helm.sh/v3:Release::cert-manager"
+                        "urn:pulumi:dev::quickstart::kubernetes:helm.sh/v3:Release::ingress-nginx",
+                        "urn:pulumi:dev::quickstart::kubernetes:helm.sh/v3:Release::cert-manager",
+                        "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::cattle-system"
                     ],
-                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::165ef857-2618-452a-a573-c45887ed3e07",
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
                     "propertyDependencies": {
                         "chart": [],
                         "compat": [],
@@ -951,9 +1463,9 @@
                         "values": [],
                         "version": []
                     },
-                    "created": "2025-06-11T02:19:29.125022Z",
-                    "modified": "2025-06-11T02:19:29.125022Z",
-                    "sourcePosition": "project:///components/rancher.py#95"
+                    "created": "2025-06-11T03:52:10.643497Z",
+                    "modified": "2025-06-11T03:52:10.643497Z",
+                    "sourcePosition": "project:///components/rancher.py#103"
                 }
             ],
             "metadata": {}
