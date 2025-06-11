@@ -4,7 +4,7 @@
         "stack": "organization/quickstart/dev",
         "latest": {
             "manifest": {
-                "time": "2025-06-11T11:52:10.656248+08:00",
+                "time": "2025-06-11T12:05:24.854517+08:00",
                 "magic": "aca397c5c01e73e6cdf70d6d6782bbc85035e91382bf09bf47b318e145d08d2e",
                 "version": "v3.174.0"
             },
@@ -19,6 +19,30 @@
                     "urn": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
                     "custom": false,
                     "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "cert_manager": {
+                            "namespace": "cert-manager",
+                            "release_name": "cert-manager-058b9ad2"
+                        },
+                        "ingress": {
+                            "metrics_enabled": false,
+                            "namespace": "ingress-nginx",
+                            "release_name": "ingress-nginx-c0b6f2c3",
+                            "service_type": "LoadBalancer"
+                        },
+                        "nginx": {
+                            "deployment_namespace": "nginx",
+                            "name": "nginx-db85cd1a",
+                            "namespace": "nginx"
+                        },
+                        "rancher": {
+                            "hostname": "rancher.local",
+                            "ingress_enabled": true,
+                            "namespace": "cattle-system",
+                            "release_name": "rancher-0e744362",
+                            "tls_source": "rancher"
+                        }
+                    },
                     "created": "2025-06-11T03:24:41.2283Z",
                     "modified": "2025-06-11T03:24:41.2283Z",
                     "sourcePosition": "project:///.venv/lib/python3.13/site-packages/pulumi/runtime/stack.py#140"
@@ -37,62 +61,6 @@
                     },
                     "created": "2025-06-11T03:24:41.539269Z",
                     "modified": "2025-06-11T03:24:41.539269Z"
-                },
-                {
-                    "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::ingress-nginx",
-                    "custom": true,
-                    "id": "ingress-nginx",
-                    "type": "kubernetes:core/v1:Namespace",
-                    "inputs": {
-                        "apiVersion": "v1",
-                        "kind": "Namespace",
-                        "metadata": {
-                            "name": "ingress-nginx"
-                        }
-                    },
-                    "outputs": {
-                        "__fieldManager": "pulumi-kubernetes-00e03c0f",
-                        "__initialApiVersion": "v1",
-                        "__inputs": {
-                            "apiVersion": "v1",
-                            "kind": "Namespace",
-                            "metadata": {
-                                "name": "ingress-nginx"
-                            }
-                        },
-                        "apiVersion": "v1",
-                        "kind": "Namespace",
-                        "metadata": {
-                            "creationTimestamp": "2025-06-11T03:24:41Z",
-                            "labels": {
-                                "kubernetes.io/metadata.name": "ingress-nginx"
-                            },
-                            "name": "ingress-nginx",
-                            "resourceVersion": "485",
-                            "uid": "aa5b977c-b084-4f62-947e-ba8ea3394bdb"
-                        },
-                        "spec": {
-                            "finalizers": [
-                                "kubernetes"
-                            ]
-                        },
-                        "status": {
-                            "phase": "Active"
-                        }
-                    },
-                    "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
-                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
-                    "propertyDependencies": {
-                        "apiVersion": [],
-                        "kind": [],
-                        "metadata": []
-                    },
-                    "additionalSecretOutputs": [
-                        "metadata.name"
-                    ],
-                    "created": "2025-06-11T03:24:41.735141Z",
-                    "modified": "2025-06-11T03:24:41.735141Z",
-                    "sourcePosition": "project:///components/base_component.py#42"
                 },
                 {
                     "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::nginx",
@@ -207,6 +175,62 @@
                     "sourcePosition": "project:///components/base_component.py#42"
                 },
                 {
+                    "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::ingress-nginx",
+                    "custom": true,
+                    "id": "ingress-nginx",
+                    "type": "kubernetes:core/v1:Namespace",
+                    "inputs": {
+                        "apiVersion": "v1",
+                        "kind": "Namespace",
+                        "metadata": {
+                            "name": "ingress-nginx"
+                        }
+                    },
+                    "outputs": {
+                        "__fieldManager": "pulumi-kubernetes-00e03c0f",
+                        "__initialApiVersion": "v1",
+                        "__inputs": {
+                            "apiVersion": "v1",
+                            "kind": "Namespace",
+                            "metadata": {
+                                "name": "ingress-nginx"
+                            }
+                        },
+                        "apiVersion": "v1",
+                        "kind": "Namespace",
+                        "metadata": {
+                            "creationTimestamp": "2025-06-11T03:24:41Z",
+                            "labels": {
+                                "kubernetes.io/metadata.name": "ingress-nginx"
+                            },
+                            "name": "ingress-nginx",
+                            "resourceVersion": "485",
+                            "uid": "aa5b977c-b084-4f62-947e-ba8ea3394bdb"
+                        },
+                        "spec": {
+                            "finalizers": [
+                                "kubernetes"
+                            ]
+                        },
+                        "status": {
+                            "phase": "Active"
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::quickstart::pulumi:pulumi:Stack::quickstart-dev",
+                    "provider": "urn:pulumi:dev::quickstart::pulumi:providers:kubernetes::default_4_23_0::4c85838f-3d19-4fe0-8c6e-669310d9ae9d",
+                    "propertyDependencies": {
+                        "apiVersion": [],
+                        "kind": [],
+                        "metadata": []
+                    },
+                    "additionalSecretOutputs": [
+                        "metadata.name"
+                    ],
+                    "created": "2025-06-11T03:24:41.735141Z",
+                    "modified": "2025-06-11T03:24:41.735141Z",
+                    "sourcePosition": "project:///components/base_component.py#42"
+                },
+                {
                     "urn": "urn:pulumi:dev::quickstart::kubernetes:core/v1:Namespace::cert-manager",
                     "custom": true,
                     "id": "cert-manager",
@@ -311,7 +335,7 @@
                     "outputs": {
                         "__inputs": {
                             "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
-                            "ciphertext": "v1:zhZauAQVHURf+EEh:LDK2IXVJUnotMrda292+QMbnQ64gU9vnkfxFfLCpDX0oizTSjiYulWZxVm1ljK04TXsUrZasx5zyN0Vb/ml74FQPFKPmevyjhVuIrlBUGucTQpoos82RQzJTLs8JAS71k+cKbSJdw9uEX5i323XJNje5wpFNNNgKXcsGXxh/xE8eVJRuY3eXz3u52qoIQspE8RWHAymnNi2IplfAQ1gGyyXap4y075afGctLEOmuc1ic/pHPWIWa9HJHInSV7y9hK1LI117oehLQ1B/CQcwFGcgtINWpcG2hNn/mLk4SbcmzqbOnx2Ivvi/Ujv45S0LAY+dPriffZfW6oK5f7gg/fqHxrLtFJUJTJ9PmWMSQ5RdiQVhYkxIyYH/hPuWb4BfV3377U4lxq9AH8v2POeMvsu9xmEDNWxFTtfjWL4ZdlFipUfiVCW2IqaGfLsQd51CikIH/AOlMilhrSbvX/4AW7qWHk7bVjk3a5Wo18m0bP3K6ttsuy0cFoki9Tl2C+EB+nDXGOxua4zlPCOSmFBvUIHRPQiGtkDF4jMfbPhSA4o+jZl55nBDCF0gAH0ON9JG6UCY7Pyug8CcbqDUTflMmm0SKikUbsunhCV2O0hjJhFVw1bjAhl2EubbDnTZRmg/NWW0u7uPQxsYDVMMWPR8a+s5mj4/S5T/13euONqHOmsuPrNndNbLUS3jNYXPSRrzHDZRkJNq6at6MS14l5OXkxlsF1R3XRFhAtduUT4B0IblWrnti38Can7AJH8+lOIFyr5zB/m+DrQyECh0o2ICeaK7KxfExVFm5pf+ZqbLGv2gd/ocw5mz3ZzNHcCnzt3jwWX9c1T9LpAe4iaHLzjqyhPMRTh0rS/MESbAdkBkiPZf1CJr7j8W4EJjK7YBh4cN7VaI+YYVnRhR36IIQWBW0jemY02rHA/vP3piifbXeDgAWKNSjaGEcb+Gaohdzka68EKcaejkl36MqoWxvoT43jLupZxyIYQ=="
+                            "ciphertext": "v1:Ut4dMvmUkTuckyIT:+mt7U0woYY8YazN+khGl3Kg0a7WEbCIgMrHNgq8zt2vyKZ45ki8+ss+uO6T/rFaYNoIGYsIJidYgIXGxrMCJvkHHb+OR2WOmBdmoJ4UADNc+DCU4ePZGqIjm4BMdpk0cHRg8Ps8u50rpii0dshrjOWLo3Wlr2HCfIrS/SQw+xGhQpKetkAUH8cT01+RLo1P9FtDxi5HoRiejCh5l5yghhI6EWzvl+Ji6X+55XtQdSzqCWRMRWO5h40lkSnsItrUg2nrz7CVTJ7mlfE5W4Q0BHm2ftwsJjOAx8scDqPD9A1eKAbazIgJVjESCdXan1u+vHT+qmpkCYY01+Tici+hM+fG8kh7Zi646qPxu23h+cjdL6fls/+t0JQWZ9gtWcWJXiXqYcyVEvNfYAoAQz1mMhN/PafLNi1kEp+nL3zsBC6PqjsFXOVTRxyv2A4Lg1h7h9OLhG/pUKZeFbsLeFAS3GLZpriPAKcr9yOoFKiIz32bdzXmuPZwmm9hLBtVrdnQH8RIYtmysan1Ic9nhEpyxUbnDQTtS8pybN32aJ4y+BcddL4Q9oNjMPqSTj57I6EmmS+7MqTGt3gTc6scCcrKXQCztuFzYEDHVPrLlCt7reFwHOqGbgIL9+rbVKhe5lb0RD6RtQ9YiRA4Qu1GV/4xByfDtrFekHFdex8bMZqz0wFN/ydErUhUgjJrNDLMJmr3jsjcmLEqzABSMqBfOjCov62POBokc4XOpC0J03mMwV3rTFNvr+rvz9SX+ijgBnd/5NB/+0p9euh2rpuEvSIo5h8f0s+jE/bk+CnxuPxb9JHzQH1OQa/+b+hdytOOnpTCAPvUW8NNTq5zCoNeo4drjlWPKElnSpYCHHJIm7DE7KGop9xGUJBB9vnw4OTq3C3L+/LQE6XKqtAaiEETToXfELtulLuWorx9gx/pD21zgwC5eT2luFVrKW3OAIkM7lM2VUoCJZPVrRowvyIXONa94RbfdcFoH+A=="
                         },
                         "allowNullValues": false,
                         "atomic": false,
@@ -928,12 +952,22 @@
                                     "runAsNonRoot": true,
                                     "runAsUser": 101
                                 },
+                                "dnsPolicy": "ClusterFirstWithHostNet",
                                 "extraArgs": {
                                     "default-ssl-certificate": "ingress-nginx/tls-secret"
+                                },
+                                "hostNetwork": true,
+                                "hostPort": {
+                                    "enabled": true,
+                                    "ports": {
+                                        "http": 80,
+                                        "https": 443
+                                    }
                                 },
                                 "image": {
                                     "allowPrivilegeEscalation": false
                                 },
+                                "kind": "DaemonSet",
                                 "livenessProbe": {
                                     "enabled": true,
                                     "failureThreshold": 3,
@@ -954,6 +988,9 @@
                                 },
                                 "minReadySeconds": 0,
                                 "name": "controller",
+                                "nodeSelector": {
+                                    "kubernetes.io/os": "linux"
+                                },
                                 "podSecurityContext": {
                                     "fsGroup": 101,
                                     "runAsGroup": 101,
@@ -972,7 +1009,6 @@
                                     "periodSeconds": 5,
                                     "timeoutSeconds": 2
                                 },
-                                "replicaCount": 1,
                                 "resources": {
                                     "limits": {
                                         "cpu": "200m",
@@ -986,7 +1022,7 @@
                                 "service": {
                                     "enabled": true,
                                     "externalTrafficPolicy": "Local",
-                                    "type": "LoadBalancer"
+                                    "type": "NodePort"
                                 },
                                 "startupProbe": {
                                     "enabled": true,
@@ -1000,7 +1036,25 @@
                                     "periodSeconds": 5,
                                     "timeoutSeconds": 2
                                 },
-                                "terminationGracePeriodSeconds": 30
+                                "terminationGracePeriodSeconds": 30,
+                                "tolerations": [
+                                    {
+                                        "effect": "NoSchedule",
+                                        "key": "node-role.kubernetes.io/master",
+                                        "operator": "Exists"
+                                    },
+                                    {
+                                        "effect": "NoSchedule",
+                                        "key": "node-role.kubernetes.io/control-plane",
+                                        "operator": "Exists"
+                                    }
+                                ],
+                                "updateStrategy": {
+                                    "rollingUpdate": {
+                                        "maxUnavailable": 1
+                                    },
+                                    "type": "RollingUpdate"
+                                }
                             },
                             "defaultBackend": {
                                 "enabled": true,
@@ -1037,7 +1091,7 @@
                     "outputs": {
                         "__inputs": {
                             "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
-                            "ciphertext": "v1:m6apl06Ku0AmowYl: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"
+                            "ciphertext": "v1:fdoZfbMilobgqY/i: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"
                         },
                         "allowNullValues": false,
                         "atomic": false,
@@ -1078,8 +1132,10 @@
                             "ConfigMap/v1": [
                                 "ingress-nginx/ingress-nginx-c0b6f2c3-controller"
                             ],
+                            "DaemonSet.apps/apps/v1": [
+                                "ingress-nginx/ingress-nginx-c0b6f2c3-controller"
+                            ],
                             "Deployment.apps/apps/v1": [
-                                "ingress-nginx/ingress-nginx-c0b6f2c3-controller",
                                 "ingress-nginx/ingress-nginx-c0b6f2c3-defaultbackend"
                             ],
                             "IngressClass.networking.k8s.io/networking.k8s.io/v1": [
@@ -1112,7 +1168,7 @@
                             "chart": "ingress-nginx",
                             "name": "ingress-nginx-c0b6f2c3",
                             "namespace": "ingress-nginx",
-                            "revision": 2,
+                            "revision": 3,
                             "status": "deployed",
                             "version": "4.9.1"
                         },
@@ -1165,12 +1221,22 @@
                                     "runAsNonRoot": true,
                                     "runAsUser": 101
                                 },
+                                "dnsPolicy": "ClusterFirstWithHostNet",
                                 "extraArgs": {
                                     "default-ssl-certificate": "ingress-nginx/tls-secret"
+                                },
+                                "hostNetwork": true,
+                                "hostPort": {
+                                    "enabled": true,
+                                    "ports": {
+                                        "http": 80,
+                                        "https": 443
+                                    }
                                 },
                                 "image": {
                                     "allowPrivilegeEscalation": false
                                 },
+                                "kind": "DaemonSet",
                                 "livenessProbe": {
                                     "enabled": true,
                                     "failureThreshold": 3,
@@ -1191,6 +1257,9 @@
                                 },
                                 "minReadySeconds": 0,
                                 "name": "controller",
+                                "nodeSelector": {
+                                    "kubernetes.io/os": "linux"
+                                },
                                 "podSecurityContext": {
                                     "fsGroup": 101,
                                     "runAsGroup": 101,
@@ -1209,7 +1278,6 @@
                                     "periodSeconds": 5,
                                     "timeoutSeconds": 2
                                 },
-                                "replicaCount": 1,
                                 "resources": {
                                     "limits": {
                                         "cpu": "200m",
@@ -1223,7 +1291,7 @@
                                 "service": {
                                     "enabled": true,
                                     "externalTrafficPolicy": "Local",
-                                    "type": "LoadBalancer"
+                                    "type": "NodePort"
                                 },
                                 "startupProbe": {
                                     "enabled": true,
@@ -1237,7 +1305,25 @@
                                     "periodSeconds": 5,
                                     "timeoutSeconds": 2
                                 },
-                                "terminationGracePeriodSeconds": 30
+                                "terminationGracePeriodSeconds": 30,
+                                "tolerations": [
+                                    {
+                                        "effect": "NoSchedule",
+                                        "key": "node-role.kubernetes.io/master",
+                                        "operator": "Exists"
+                                    },
+                                    {
+                                        "effect": "NoSchedule",
+                                        "key": "node-role.kubernetes.io/control-plane",
+                                        "operator": "Exists"
+                                    }
+                                ],
+                                "updateStrategy": {
+                                    "rollingUpdate": {
+                                        "maxUnavailable": 1
+                                    },
+                                    "type": "RollingUpdate"
+                                }
                             },
                             "defaultBackend": {
                                 "enabled": true,
@@ -1293,8 +1379,8 @@
                         "delete": 300
                     },
                     "created": "2025-06-11T03:34:54.286696Z",
-                    "modified": "2025-06-11T03:51:20.492288Z",
-                    "sourcePosition": "project:///components/ingress.py#209"
+                    "modified": "2025-06-11T04:05:24.850562Z",
+                    "sourcePosition": "project:///components/ingress.py#239"
                 },
                 {
                     "urn": "urn:pulumi:dev::quickstart::kubernetes:helm.sh/v3:Release::rancher",
@@ -1357,7 +1443,7 @@
                     "outputs": {
                         "__inputs": {
                             "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
-                            "ciphertext": "v1:IIBhyj5XMwJOiz9h:93L9oP7O0Sjd40bPspT8Kki3O684yPcY7hWoe2+QCMDWuan95e3psNTYWIJrxrpJEs/v/TFpstQV1V7xFtcjRmxQul0SO7eb97sp7nKmvbP2ZdoyV61Od+h2nwVRGS8Jr3Qd4uCMyr0dUSfyHn/3tCrKX/0ehM/i3pI6dGw9+Bv06CzmIHvnyZaCGhSJr309RlF04rxfPAPv66YdM4FCKdObKwlFVNJcRPrJZ+rZlwLsbUwdKHbHqm+Dkv5vWIqpT9EyuW3c++d97lJI2GHxY45iMHOh/yJ6K5H4MaHROKR+pltxVbPEegvKvkFrlv+r/43JNovwTPX8RwJZ26W5QNZFjk3Zo2nk73525iORa/jvr06WUEj8GJ/0QwZ10POJWYMfJjrGJIPrfiNT8Xoug7QAcJmdqqA8Q/Kx75DD9yidPLj4AFQbxk3SZQ+XyKtPaAmNS3TU7tF2t/Xplvh0EHYX4+JGICPZCLytU5WJvdWEHbrj5tTFwLppVLMIffy117tEykoP7OGJoIGhbYgvbg2Ck0Gd+S/Yn6zRI6TaW1ok7hG8qwdGnF82RMszr2ohhpaujsFcVk/2rpwWJ848L7/ZpS1WkwwT1J4WjsZ4ft2aLBbdDldrEugclPuMt3RAcxSzR44P2pKy9xXE6L+Rv05TvAfNKb8N+pscKyzcSpob+u7VpX6vVfalK88WR1f3ceunsjTMBRcush5/dN08Rgtve6TkTnzDsZuJOljVTqqGkFDZLGCXIKXEd4mrThHEq7cDo4jCcc4rFW+I5LqBN2sXOjjTysEspZ+X/WYx88WILUu/aPw6H2jSExQRybIV6CebxlaC76P/8Xvi4sPPs0MO4IUwZAM33zPeTwMdfZnKhJpXdd7mxQOSV586AZOOKfUVBgM3qULtKjdssQrgqPAKghYD/TzBpMDLksiinGW/qQ32HIvdWbSdVGRt2xy0rW7UEzfko59q6EXWSPR8TazJL01ZPlOj7lvoQ13RbgxJjaXLX8O7nuY2KkoKnWTq2iC2O9Fg7bvLsfh58xEI+ACMaQPeNZN2P0Q2P7Jd1Oy6ZlWo+qQxwR66rpULLVWpDqewkhZF0Kvk3QTFfD/wnPLaRWq4+YeSyKEVIyi9lmev0rVwtluMICDBkkW16KHe5Nkf7x86/18kYW+CyXAxafpJXF/AOwXoqtdwOC4YKUxupvfIiQMf3XKmt3AsKWAlTyLS4KmeoZ92WDJ603JK5bt1qZfr0sjHulvfhTaXBjsY305dlJVh933sJ2z+dEDE4qNS3c/3NgmcDxHyD3fz"
+                            "ciphertext": "v1:0yJ1kQ07WbMh2jiC:meF7jXEJ7hBCf/z1XKObBhCpibkoiRumUsf7UcIlepF/wwykbX/LpxGfyvoKRTsi04GuRDQKr/AmrvOgjr5sWgWTg2sdAGYsy+s4arpCq+Ou8TBrrIZxnr5hHypsT181xabvt//pIXAnlInh6cKrufXyRhVoW392tzTk0rExpLlK6wABBImRPGC/r2Uw/meV3glddcuTJ6LtGzequBktztB009HMl14PC5IU8jJ4fpEJn0oJYRuoIDkgTk1ZsLqgnPo/vid7rnDJrE9vRlkvQiywjCQIi9670YQeamAHOZkEpkuVqi4cqYR6B7+kkUMUwwsLwyZ/oe3m8zAxIwuuMNMRi/TFbNMYnEpfjWfQdhw2BrI+5hqyzzAuubA2KOhCFgGLQcsAIDFJhp7Jtlpz+uB2NFvZym+Jy7z/mWTwyKEj+Gt41PAx5FBro6M9iXCfxBXWI6qWM9BXYsHLzlg0vBSZX3gHwjvvvon2oPEVDvUZAHhlJ4Oj7aUhvtwXWrwH6i8O8ZpmJvX7gVQBYEVTCvSiRTbaITAoTmyX08X1g+liHPccg22FP5xkZLEiH7eT1Tfj8OvSjkFC82dbcHErBTUaCNxe9bWoMJckTkwGHSdgYTT5Xou2MOZJhRZjd56CZ3hcaQQI/5YGBqAuOS5XiykH1YWZPT3bRiR7e4pjA+U9wnYk2kxQLQKi6uYgMrQSlGF1uTljO+J5xSrjpt0wc61pRrqgR4vVW8p70R5+ozgDBKmCHt78+SVpUvbomUvrgnpqftds8RPjftfpYBZ4c5+ACkMJlHUXcWSeqfjd6JXxCEs1PsccyaQlrOOFGfyAaIUZjFEuxGdtZTesYR2kmjmVKsY1yKe0k9NkfIuDebv+LEIjkJwcx/jyioSS4JIyIFoQLywZEtIbmxppYtsdIVkPr15di96M5+yqzgWhtjSLk8bOUX2fyjzaM7uE+pq1TSGMCRouaIHHqmJwEkIhlLtqCFc2MdoipPWrwAnbN8S32mWktRikcSKbIinVegKtC5V6RXCX3AJ+SeAANnMr9XogtZJFQIyY6Jf5s1AOyHSV6Jp8WeuptYCXxQm7L/YEyn1meVMgSGLjeVR4YuPgkXvwbCNXTE7iuKzLWvCi/p5t6JdPIMoRPxP/OLXfyvDmfSPCvggU/pYhSxYkMuEu6moZbHzweYt77gkl3tu1wG6sw4joGCPcrP13f/2B3qHvl1Vr8ygskD9/UeopSHsJLcjvGLC7k0/Kye4r80zBnjA6pWUnOWvHEDzY/agZKszBH9cDtRNmWQbUmfu/tQcS"
                         },
                         "allowNullValues": false,
                         "atomic": false,
