@@ -49,11 +49,28 @@ class IngressComponent(BaseComponent):
                 "image": {
                     "allowPrivilegeEscalation": False,
                 },
-                "replicaCount": kwargs.get("controller_replicas", 1),
+                "kind": "DaemonSet",  # 使用 DaemonSet 部署
+                "hostNetwork": True,   # 使用主机网络
+                "dnsPolicy": "ClusterFirstWithHostNet",  # 配置 DNS 策略
+                "nodeSelector": {
+                    "kubernetes.io/os": "linux"  # 只在 Linux 节点上运行
+                },
+                "tolerations": [
+                    {
+                        "key": "node-role.kubernetes.io/master",
+                        "operator": "Exists",
+                        "effect": "NoSchedule"
+                    },
+                    {
+                        "key": "node-role.kubernetes.io/control-plane",
+                        "operator": "Exists",
+                        "effect": "NoSchedule"
+                    }
+                ],
                 "resources": {
                     "requests": {
-                        "cpu": "50m",        # 降低 CPU 请求
-                        "memory": "90Mi"     # 降低内存请求
+                        "cpu": "50m",
+                        "memory": "90Mi"
                     },
                     "limits": {
                         "cpu": "200m",
@@ -76,10 +93,10 @@ class IngressComponent(BaseComponent):
                     "runAsUser": 101,
                     "runAsGroup": 101,
                     "runAsNonRoot": True,
-                    "allowPrivilegeEscalation": True,  # 允许权限提升以运行 dumb-init
+                    "allowPrivilegeEscalation": True,
                     "capabilities": {
                         "drop": ["ALL"],
-                        "add": ["NET_BIND_SERVICE"]  # 允许绑定特权端口
+                        "add": ["NET_BIND_SERVICE"]
                     }
                 },
                 "config": {
@@ -88,11 +105,11 @@ class IngressComponent(BaseComponent):
                     "compute-full-forwarded-for": "true",
                     "use-proxy-protocol": "false",
                     "proxy-body-size": "50m",
-                    "keep-alive": "75",          # 优化连接保持时间
-                    "keep-alive-requests": "100", # 每个连接的最大请求数
-                    "upstream-keepalive-connections": "100",  # 上游连接保持数
-                    "upstream-keepalive-timeout": "60",       # 上游连接超时
-                    "client-header-timeout": "60s",          # 客户端超时设置
+                    "keep-alive": "75",
+                    "keep-alive-requests": "100",
+                    "upstream-keepalive-connections": "100",
+                    "upstream-keepalive-timeout": "60",
+                    "client-header-timeout": "60s",
                     "client-body-timeout": "60s",
                     "proxy-connect-timeout": "60s",
                     "proxy-read-timeout": "60s",
@@ -100,14 +117,21 @@ class IngressComponent(BaseComponent):
                 },
                 "service": {
                     "enabled": True,
-                    "type": kwargs.get("service_type", "LoadBalancer"),
+                    "type": "NodePort",  # 使用 NodePort 服务类型
                     "externalTrafficPolicy": "Local"
+                },
+                "hostPort": {
+                    "enabled": True,     # 启用 hostPort
+                    "ports": {
+                        "http": 80,
+                        "https": 443
+                    }
                 },
                 "admissionWebhooks": {
                     "enabled": True,
                     "patch": {
                         "enabled": True,
-                        "resources": {      # 降低 webhook 资源请求
+                        "resources": {
                             "requests": {
                                 "cpu": "50m",
                                 "memory": "50Mi"
@@ -119,9 +143,15 @@ class IngressComponent(BaseComponent):
                         }
                     }
                 },
-                "minReadySeconds": 0,          # 加快 Pod 就绪时间
-                "terminationGracePeriodSeconds": 30,  # 优化终止时间
-                "startupProbe": {              # 添加启动探针
+                "minReadySeconds": 0,
+                "updateStrategy": {
+                    "type": "RollingUpdate",
+                    "rollingUpdate": {
+                        "maxUnavailable": 1
+                    }
+                },
+                "terminationGracePeriodSeconds": 30,
+                "startupProbe": {
                     "enabled": True,
                     "initialDelaySeconds": 5,
                     "periodSeconds": 5,
@@ -133,7 +163,7 @@ class IngressComponent(BaseComponent):
                         "scheme": "HTTP"
                     }
                 },
-                "readinessProbe": {            # 优化就绪探针
+                "readinessProbe": {
                     "enabled": True,
                     "initialDelaySeconds": 5,
                     "periodSeconds": 5,
@@ -145,7 +175,7 @@ class IngressComponent(BaseComponent):
                         "scheme": "HTTP"
                     }
                 },
-                "livenessProbe": {             # 优化存活探针
+                "livenessProbe": {
                     "enabled": True,
                     "initialDelaySeconds": 10,
                     "periodSeconds": 10,
